@@ -1,0 +1,308 @@
+﻿@page
+@model ігри.Pages.game3Model
+@{
+    ViewData["Title"] = "Home page";
+}
+<!DOCTYPE html>
+<html lang="ua">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Хрестики-Нулики з розумним ботом</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #2C2F33; 
+            margin: 0;
+            color: #FFFFFF;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: #FFFFFF; 
+        }
+
+        .board {
+            display: grid;
+            gap: 5px;
+            grid-template-columns: repeat(3, 50px);
+            margin-bottom: 20px;
+            visibility: hidden;
+        }
+
+            .board .cell {
+                width: 50px;
+                height: 50px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 24px;
+                background-color: #7289DA; 
+                border: 2px solid #99AAB5;
+                cursor: pointer;
+                transition: background-color 0.3s, color 0.3s;
+                color: #FFFFFF; 
+            }
+
+                .board .cell:hover {
+                    background-color: #99AAB5;
+                    color: #2C2F33;
+                }
+
+        .status {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #FFFFFF;
+        }
+
+        .controls {
+            margin-bottom: 20px;
+            color: #FFFFFF;
+        }
+
+            .controls label {
+                margin-right: 10px;
+            }
+
+            .controls button {
+                padding: 5px 10px;
+                font-size: 16px;
+                background-color: #7289DA; 
+                color: #FFFFFF;
+                border: none;
+                cursor: pointer;
+                transition: background-color 0.3s, color 0.3s;
+            }
+
+                .controls button:hover {
+                    background-color: #99AAB5;
+                    color: #2C2F33; 
+                }
+
+        .game-info {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            max-width: 300px;
+            margin-right: 20px;
+            color: #FFFFFF; 
+        }
+
+            .game-info h2 {
+                font-size: 18px;
+                margin: 0;
+                color: #FFFFFF;
+            }
+
+            .game-info p,
+            .game-info ul {
+                font-size: 16px;
+                margin: 5px 0;
+            }
+
+            .game-info ul {
+                padding-left: 20px;
+            }
+
+            .game-info img {
+                width: 300px;
+                height: auto;
+                margin-left: 20px;
+            }
+
+            .game-info .text {
+                flex: 1;
+            }
+
+        .game-content {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Тік-Так-Тоу з розумним ботом</h1>
+
+    <div class="game-content">
+   
+        <div class="game-info">
+            <h2>Опис гри</h2>
+            <p>Тік-Так-Тоу (Хрести-Нулики) - це проста, але захоплююча гра для двох гравців, де метою є заповнити рядок, стовпець або діагональ своїми символами.</p>
+
+            <h2>Історія</h2>
+            <p>Ця гра має давнє походження, і її коріння можна простежити до Стародавнього Риму та Єгипту. Вона є класичним прикладом гри з нульовою сумою, де один гравець виграє за рахунок поразки іншого.</p>
+
+            <h2>Рекомендований вік</h2>
+            <p>0+</p>
+        </div>
+
+        <div>
+            <div class="controls">
+                <label>
+                    <input type="radio" name="symbol" value="X" checked> Грати за X
+                </label>
+                <label>
+                    <input type="radio" name="symbol" value="O"> Грати за O
+                </label>
+                <button onclick="startGame()">Почати гру</button>
+            </div>
+
+            <div class="board"></div>
+            <div class="status"></div>
+        </div>
+    </div>
+
+    <script>
+        let board = ['', '', '', '', '', '', '', '', ''];
+        let currentPlayer = 'X';
+        let playerSymbol = 'X';
+        let botSymbol = 'O';
+        let gameActive = false;
+        let updateInterval;
+
+        const winningCombinations = [
+            [0, 1, 2], [3, 4, 5], [6, 7, 8],
+            [0, 3, 6], [1, 4, 7], [2, 5, 8],
+            [0, 4, 8], [2, 4, 6] 
+        ];
+
+        function startGame() {
+            const selectedSymbol = document.querySelector('input[name="symbol"]:checked').value;
+            playerSymbol = selectedSymbol;
+            botSymbol = selectedSymbol === 'X' ? 'O' : 'X';
+            currentPlayer = 'X';
+            board = ['', '', '', '', '', '', '', '', ''];
+            gameActive = true;
+
+            const boardElement = document.querySelector('.board');
+            boardElement.style.gridTemplateColumns = `repeat(3, 50px)`;
+            boardElement.innerHTML = '';
+            for (let i = 0; i < 9; i++) {
+                const cell = document.createElement('div');
+                cell.className = 'cell';
+                cell.addEventListener('click', () => makeMove(i));
+                boardElement.appendChild(cell);
+            }
+            boardElement.style.visibility = 'visible'; 
+            updateStatus();
+
+            clearInterval(updateInterval); 
+            updateInterval = setInterval(updateBoard, 1000);
+
+            if (botSymbol === 'X') botMove();
+        }
+
+        function makeMove(index) {
+            if (gameActive && !board[index] && !checkWinner(playerSymbol) && !checkWinner(botSymbol)) {
+                board[index] = currentPlayer;
+                document.querySelectorAll('.cell')[index].innerText = currentPlayer;
+                if (checkWinner(currentPlayer)) {
+
+                    clearInterval(updateInterval);
+                    updateStatus(currentPlayer === botSymbol ? "Бот переміг!" : `${currentPlayer} виграв!`);
+
+                } else if (board.every(cell => cell !== '')) {
+
+                    clearInterval(updateInterval);
+                    updateStatus('Нічия!');
+                } else {
+                    currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+                    if (currentPlayer === botSymbol) botMove();
+                    updateStatus();
+                }
+            }
+        }
+
+        function botMove() {
+            if (gameActive) {
+                let move = findBestMove(botSymbol);
+                if (move === -1) move = findBestMove(playerSymbol);
+                if (move === -1 && board[4] === '') move = 4;
+                if (move === -1) {
+                    const corners = [0, 2, 6, 8];
+                    for (let corner of corners) {
+                        if (board[corner] === '') {
+                            move = corner;
+                            break;
+                        }
+                    }
+                }
+                if (move === -1) move = board.findIndex(cell => cell === '');
+                board[move] = botSymbol;
+                document.querySelectorAll('.cell')[move].innerText = botSymbol;
+            }
+            if (checkWinner(botSymbol)) {
+
+                clearInterval(updateInterval); 
+                updateStatus("Бот переміг!");
+
+            } else if (board.every(cell => cell !== '')) {
+
+                clearInterval(updateInterval);
+                updateStatus('Нічия!');
+
+            } else {
+                currentPlayer = playerSymbol;
+            }
+        }
+
+        function findBestMove(symbol) {
+            for (let [a, b, c] of winningCombinations) {
+                if (board[a] === symbol && board[b] === symbol && board[c] === '') return c;
+                if (board[a] === symbol && board[b] === '' && board[c] === symbol) return b;
+                if (board[a] === '' && board[b] === symbol && board[c] === symbol) return a;
+            }
+            return -1;
+        }
+
+        function checkWinner(symbol) {
+            return winningCombinations.some(combination =>
+                combination.every(index => board[index] === symbol)
+            );
+        }
+
+        function updateBoard() {
+            document.querySelectorAll('.cell').forEach((cell, index) => {
+                cell.innerText = board[index];
+            });
+        }
+        l = 0;
+        function updateStatus(message) {
+            console.log(l + "    " + message);
+            l += 1;
+            console.log(document.querySelector('.status'));
+            if (message === 'Бот переміг!') {
+                currentPlayer = 'Бот переміг!';
+                document.querySelector('.status').innerText = "Бот переміг!"
+                gameActive = false;
+
+            }
+            else if (message === 'Нічия!') {
+                currentPlayer = 'Нічия!';
+                document.querySelector('.status').innerText = "Нічия!"
+                gameActive = false;
+            }
+            else {
+                console.log(l + "  rtshujghkjlhlhjhkjg  " + message);
+                if (currentPlayer == 'O' || currentPlayer == 'X') {
+                    document.querySelector('.status').innerText = `Хід: ${currentPlayer}`;
+                }
+                else {
+                    document.querySelector('.status').innerText = ` ${currentPlayer}`;
+                }
+
+            }
+        }
+
+    </script>
+</body>
+
+</html>
