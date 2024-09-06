@@ -1,0 +1,348 @@
+﻿@page
+@model ігри.Pages.HomeModel
+@{
+    ViewData["Title"] = "Home page";
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Камінь, Ножиці, Папір</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background-color: #36393f;
+            color: white;
+        }
+
+        .button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+
+        .score {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+
+        .controls {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .reset-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #d32f2f;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .continue-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #388e3c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            display: none;
+        }
+
+        .select-container {
+            margin-top: 20px;
+        }
+
+            .select-container select {
+                padding: 10px;
+                font-size: 16px;
+            }
+
+        .images {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+            .images div {
+                margin: 0 20px;
+                text-align: center;
+            }
+
+            .images img {
+                width: 100px;
+                height: 100px;
+            }
+
+                .images img.hidden {
+                    display: none;
+                }
+
+        .game-info {
+            margin-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-align: left;
+            padding: 0 20px;
+        }
+
+            .game-info .text {
+                flex: 1;
+            }
+
+            .game-info img {
+                width: 300px;
+                height: auto;
+                margin-left: 20px;
+            }
+
+        .like-dislike {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 20px;
+            padding-right: 20px;
+        }
+
+            .like-dislike button {
+                padding: 10px 20px;
+                font-size: 16px;
+                cursor: pointer;
+                margin: 0 10px;
+            }
+
+                .like-dislike button.like {
+                    background-color: #4CAF50;
+                    color: white;
+                    border: none;
+                    border-radius: 5px;
+                }
+
+                .like-dislike button.dislike {
+                    background-color: #f44336;
+                    color: white;
+                    border: none;
+                    border-radius: 5px;
+                }
+        .game-content {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Камінь, Ножиці, Папір</h1>
+    <div id="start-button-container">
+        <button class="button" onclick="startGameButton()">Почати грати</button>
+    </div>
+
+    <div class="game-content">
+        <div class="game-info">
+            <div class="text">
+                <h2>Опис гри</h2>
+                <p>
+                    Камінь, Ножиці, Папір - це класична гра, де двоє гравців одночасно вибирають один з трьох варіантів:
+                    камінь, ножиці або папір. Переможець визначається за наступними правилами:
+                </p>
+                <ul>
+                    <li>Камінь б'є ножиці</li>
+                    <li>Ножиці б'ють папір</li>
+                    <li>Папір б'є камінь</li>
+                </ul>
+                <h2>Історія</h2>
+                <p>
+                    Ця гра має давні коріння і відома вже багато століть. Вважається, що вона виникла в Китаї та
+                    поширилася по всьому світу.
+                </p>
+                <h2>Рекомендований вік</h2>
+                <p>0+</p>
+            </div>
+            <img src="data:image/png;base64,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" alt="Зображення гри">
+        </div>
+
+        <div class="like-dislike">
+            <button class="like" onclick="likeGame()">Подобається</button>
+            <button class="dislike" onclick="dislikeGame()">Не подобається</button>
+        </div>
+
+        <div class="select-container">
+            <select id="playerChoice">
+                <option value="rock" selected>Камінь</option>
+                <option value="scissors">Ножиці</option>
+                <option value="paper">Папір</option>
+            </select>
+            <button class="button" onclick="startGame()">Вибрати</button>
+        </div>
+
+        <div class="images">
+            <div>
+                <h2>Ваш вибір:</h2>
+                <img id="playerChoiceImg" src="" alt="Ваш вибір">
+            </div>
+            <div>
+                <h2>Вибір комп'ютера:</h2>
+                <img id="computerChoiceImg" class="hidden" src="" alt="Вибір комп'ютера">
+            </div>
+        </div>
+
+        <div class="result" id="result"></div>
+        <div class="score" id="score">Рахунок - Гравець: 0, Комп'ютер: 0</div>
+
+        <div class="controls">
+            <button class="reset-button" onclick="resetGame()">Скинути гру</button>
+            <button class="continue-button" onclick="continueGame()">Продовжити</button>
+        </div>
+    </div>
+
+
+
+
+    <script>
+
+        let playerScore = 0;
+        let computerScore = 0;
+        let userChoice = 'rock';
+
+        function upd_User() {
+            const userChoice = playerChoice.value;
+            console.log('Вибрано:', userChoice);
+            bot = "rock";
+            if (computerChoice == 'rock' || computerChoice == 'paper' || computerChoice == 'scissors') {
+                updateImages(playerChoice, computerChoice)
+            }
+            else {
+                choiseRandNo()
+                updateImages(playerChoice, bot)
+            }
+        }
+        setInterval(upd_User, 100);
+        function choiseRandNo() {
+            const choices = ['rock', 'scissors', 'paper'];
+            let num = 0;
+            setInterval(() => {
+                num = num === 2 ? 0 : num + 1;
+            }, 500);
+            bot = choices[num]
+        }
+        function startGameButton() {
+            document.getElementById('start-button-container').style.display = 'none';
+            document.querySelector('.game-content').style.display = 'block';
+        }
+        function getComputerChoice() {
+            const choices = ['rock', 'scissors', 'paper'];
+            const randomIndex = Math.floor(Math.random() * choices.length);
+            return choices[randomIndex];
+        }
+
+        function getResult(userChoice, computerChoice) {
+            if (userChoice === computerChoice) {
+                return 'Нічия!';
+            }
+            if (
+                (userChoice === 'rock' && computerChoice === 'scissors') ||
+                (userChoice === 'scissors' && computerChoice === 'paper') ||
+                (userChoice === 'paper' && computerChoice === 'rock')
+            ) {
+                playerScore++;
+                return 'Ви виграли!';
+            } else {
+                computerScore++;
+                return 'Ви програли!';
+            }
+        }
+
+        function updateScore() {
+            document.getElementById('score').innerText = `Рахунок - Гравець: ${playerScore}, Комп'ютер: ${computerScore}`;
+        }
+
+        function updateImages(playerChoice, computerChoice) {
+            const images = {
+                rock: 'https://newacropolis.org.ua/uploads/production/ckeditor/picture/data/04b/74b/04-/04b74b04-0309-4843-9f33-bfb4cbff744e/content.png',
+                scissors: 'https://c8.alamy.com/comp/DNM76J/cartoon-illustration-of-funny-scissors-clip-art-DNM76J.jpg',
+                paper: 'https://cabareservice.od.ua/wp-content/uploads/2020/09/1555493180_9267-scaled.jpg'
+            };
+            document.getElementById('playerChoiceImg').src = images[playerChoice];
+            document.getElementById('computerChoiceImg').src = images[computerChoice];
+            document.getElementById('computerChoiceImg').classList.remove('hidden');
+        }
+
+        function startGame() {
+            if (playerScore >= 3 || computerScore >= 3) {
+                document.getElementById('result').innerText = 'Гра закінчена. Натисніть "Скинути гру", щоб почати нову.';
+                document.querySelector('.continue-button').style.display = 'none';
+                return;
+            }
+
+            userChoice = document.getElementById('playerChoice').value;
+            if (!userChoice) {
+                document.getElementById('result').innerText = 'Будь ласка, виберіть варіант.';
+                return;
+            }
+            else {
+                updateImages(userChoice, false);
+            }
+
+            document.getElementById('computerChoiceImg').classList.add('hidden');
+
+            const computerChoice = getComputerChoice();
+            const result = getResult(userChoice, computerChoice);
+            document.getElementById('result').innerText = `Ви вибрали ${userChoice}, комп'ютер вибрав ${computerChoice}. ${result}`;
+            updateScore();
+            updateImages(userChoice, computerChoice);
+
+            if (playerScore >= 3) {
+                document.getElementById('result').innerText = 'Вітаємо! Ви виграли гру!';
+                document.querySelector('.continue-button').style.display = 'none'; 
+            } else if (computerScore >= 3) {
+                document.getElementById('result').innerText = 'Вибачте, комп\'ютер виграв гру!';
+                document.querySelector('.continue-button').style.display = 'none'; 
+            } else {
+                document.querySelector('.continue-button').style.display = 'block'; 
+            }
+        }
+
+        function resetGame() {
+            playerScore = 0;
+            computerScore = 0;
+            userChoice = null;
+            updateScore();
+            document.getElementById('result').innerText = 'Гра скинута. Виберіть один з варіантів, щоб розпочати новий раунд.';
+            document.getElementById('playerChoiceImg').src = '';
+            document.getElementById('computerChoiceImg').src = '';
+            document.getElementById('computerChoiceImg').classList.add('hidden');
+            document.querySelector('.continue-button').style.display = 'none'; 
+        }
+
+        function continueGame() {
+            document.getElementById('result').innerText = '';
+            document.querySelector('.continue-button').style.display = 'none'; 
+            document.getElementById('computerChoiceImg').classList.add('hidden'); 
+            document.getElementById('playerChoice').value = '';
+        }
+
+        function likeGame() {
+            alert('Дякую за ваш лайк!');
+        }
+
+        function dislikeGame() {
+            alert('Дякуємо за ваш відгук. Ми постараємося покращити гру!');
+        }
+    </script>
+</body>
+
+</html>
