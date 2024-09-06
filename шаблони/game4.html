@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ua">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Змійка</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .board {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            background-color: #000;
+            overflow: hidden;
+            border: 1px solid #000;
+        }
+
+        .snake {
+            position: absolute;
+            background-color: #0f0;
+        }
+
+        .apple {
+            position: absolute;
+            background-color: #f00;
+        }
+
+        .controls {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Змійка</h1>
+    <div class="controls">
+        <button onclick="resetGame()">Почати нову гру</button>
+    </div>
+    <div class="board" id="board"></div>
+    <script>
+        const boardSize = 400;
+        const gridSize = 20;
+        const appleSize = gridSize;
+        const snakeSpeed = 200;
+
+        let snake = [];
+        let direction = 'RIGHT';
+        let apple = {};
+        let gameInterval;
+        let gameOver = false;
+
+        function createBoard() {
+            const board = document.getElementById('board');
+            board.innerHTML = '';
+            document.querySelectorAll('.snake').forEach(el => el.remove());
+            document.querySelectorAll('.apple').forEach(el => el.remove());
+        }
+
+        function resetGame() {
+            gameOver = false;
+            direction = 'RIGHT';
+            snake = [
+                { x: 100, y: 100 },
+                { x: 80, y: 100 },
+                { x: 60, y: 100 },
+            ];
+            placeApple();
+            createBoard();
+            gameInterval = setInterval(moveSnake, snakeSpeed);
+        }
+
+        function placeApple() {
+            apple.x = Math.floor(Math.random() * (boardSize / gridSize)) * gridSize;
+            apple.y = Math.floor(Math.random() * (boardSize / gridSize)) * gridSize;
+            drawApple();
+        }
+
+        function drawApple() {
+            const board = document.getElementById('board');
+            const appleElement = document.createElement('div');
+            appleElement.className = 'apple';
+            appleElement.style.width = `${appleSize}px`;
+            appleElement.style.height = `${appleSize}px`;
+            appleElement.style.left = `${apple.x}px`;
+            appleElement.style.top = `${apple.y}px`;
+            board.appendChild(appleElement);
+        }
+
+        function drawSnake() {
+            const board = document.getElementById('board');
+            snake.forEach(segment => {
+                const snakeElement = document.createElement('div');
+                snakeElement.className = 'snake';
+                snakeElement.style.width = `${gridSize}px`;
+                snakeElement.style.height = `${gridSize}px`;
+                snakeElement.style.left = `${segment.x}px`;
+                snakeElement.style.top = `${segment.y}px`;
+                board.appendChild(snakeElement);
+            });
+        }
+
+        function moveSnake() {
+            if (gameOver) return;
+
+            let newHead = { ...snake[0] };
+
+            switch (direction) {
+                case 'UP':
+                    newHead.y -= gridSize;
+                    break;
+                case 'DOWN':
+                    newHead.y += gridSize;
+                    break;
+                case 'LEFT':
+                    newHead.x -= gridSize;
+                    break;
+                case 'RIGHT':
+                    newHead.x += gridSize;
+                    break;
+            }
+
+            if (checkCollision(newHead)) {
+                gameOver = true;
+                clearInterval(gameInterval);
+                alert('Гра закінчена!');
+                return;
+            }
+
+            snake.unshift(newHead);
+
+            if (newHead.x === apple.x && newHead.y === apple.y) {
+                placeApple();
+            } else {
+                snake.pop();
+            }
+
+            createBoard();
+            drawApple();
+            drawSnake();
+        }
+
+        function checkCollision(head) {
+            if (head.x < 0 || head.x >= boardSize || head.y < 0 || head.y >= boardSize) {
+                return true;
+            }
+
+            return snake.some(segment => segment.x === head.x && segment.y === head.y);
+        }
+
+        function handleKeyPress(event) {
+            switch (event.key) {
+                case 'ArrowUp':
+                    if (direction !== 'DOWN') direction = 'UP';
+                    break;
+                case 'ArrowDown':
+                    if (direction !== 'UP') direction = 'DOWN';
+                    break;
+                case 'ArrowLeft':
+                    if (direction !== 'RIGHT') direction = 'LEFT';
+                    break;
+                case 'ArrowRight':
+                    if (direction !== 'LEFT') direction = 'RIGHT';
+                    break;
+            }
+        }
+
+        document.addEventListener('keydown', handleKeyPress);
+
+        resetGame();
+    </script>
+</body>
+
+</html>

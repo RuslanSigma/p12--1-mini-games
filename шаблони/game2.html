@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Камінь, Ножиці, Папір</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background-color: #36393f;
+            /* Колір фону, схожий на Discord */
+            color: white;
+            /* Залишає колір тексту білим для кращої видимості на фоні */
+        }
+
+        .button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+
+        .score {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+
+        .controls {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            /* Додає відстань між кнопками */
+        }
+
+        .reset-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #d32f2f;
+            /* Темно-червоний */
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .continue-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #388e3c;
+            /* Темно-зелений */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            display: none;
+            /* Сховати кнопку до завершення гри */
+        }
+
+        .select-container {
+            margin-top: 20px;
+        }
+
+        .select-container select {
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        .images {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .images div {
+            margin: 0 20px;
+            text-align: center;
+        }
+
+        .images img {
+            width: 100px;
+            height: 100px;
+        }
+
+        .images img.hidden {
+            display: none;
+            /* Сховати зображення комп'ютера до початку гри */
+        }
+
+        .game-info {
+            margin-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-align: left;
+            padding: 0 20px;
+        }
+
+        .game-info .text {
+            flex: 1;
+        }
+
+        .game-info img {
+            width: 300px;
+            height: auto;
+            margin-left: 20px;
+        }
+
+        .like-dislike {
+            display: flex;
+            justify-content: flex-end;
+            /* Переміщає кнопки вправо */
+            margin-top: 20px;
+            padding-right: 20px;
+            /* Відступ з правого боку */
+        }
+
+        .like-dislike button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 0 10px;
+        }
+
+        .like-dislike button.like {
+            background-color: #4CAF50;
+            /* Зелений */
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .like-dislike button.dislike {
+            background-color: #f44336;
+            /* Червоний */
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        /* Сховати гру до натискання кнопки "Почати грати" */
+        .game-content {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Камінь, Ножиці, Папір</h1>
+
+    <!-- Кнопка для початку гри -->
+    <div id="start-button-container">
+        <button class="button" onclick="startGameButton()">Почати грати</button>
+    </div>
+
+    <!-- Вміст гри -->
+    <div class="game-content">
+        <div class="game-info">
+            <div class="text">
+                <h2>Опис гри</h2>
+                <p>Камінь, Ножиці, Папір - це класична гра, де двоє гравців одночасно вибирають один з трьох варіантів:
+                    камінь, ножиці або папір. Переможець визначається за наступними правилами:</p>
+                <ul>
+                    <li>Камінь б'є ножиці</li>
+                    <li>Ножиці б'ють папір</li>
+                    <li>Папір б'є камінь</li>
+                </ul>
+                <h2>Історія</h2>
+                <p>Ця гра має давні коріння і відома вже багато століть. Вважається, що вона виникла в Китаї та
+                    поширилася по всьому світу. </p>
+                <h2>Рекомендований вік</h2>
+                <p>0+</p>
+            </div>
+            <img src="Z:\Нова папка\rsp.png" alt="Зображення гри">
+        </div>
+
+        <div class="like-dislike">
+            <button class="like" onclick="likeGame()">Подобається</button>
+            <button class="dislike" onclick="dislikeGame()">Не подобається</button>
+        </div>
+
+        <div class="select-container">
+            <select id="playerChoice">
+                <option value="rock" selected>Камінь</option>
+                <option value="scissors">Ножиці</option>
+                <option value="paper">Папір</option>
+            </select>
+            <button class="button" onclick="startGame()">Вибрати</button>
+        </div>
+
+        <div class="images">
+            <div>
+                <h2>Ваш вибір:</h2>
+                <img id="playerChoiceImg" src="" alt="Ваш вибір">
+            </div>
+            <div>
+                <h2>Вибір комп'ютера:</h2>
+                <img id="computerChoiceImg" class="hidden" src="" alt="Вибір комп'ютера">
+            </div>
+        </div>
+
+        <div class="result" id="result"></div>
+        <div class="score" id="score">Рахунок - Гравець: 0, Комп'ютер: 0</div>
+
+        <div class="controls">
+            <button class="reset-button" onclick="resetGame()">Скинути гру</button>
+            <button class="continue-button" onclick="continueGame()">Продовжити</button>
+        </div>
+    </div>
+
+
+
+
+    <script>
+
+        let playerScore = 0;
+        let computerScore = 0;
+        let userChoice = 'rock';
+
+        function upd_User() {
+            const userChoice = playerChoice.value;
+            console.log('Вибрано:', userChoice);
+            bot = "rock";
+            if (computerChoice == 'rock' || computerChoice == 'paper' || computerChoice == 'scissors') {
+                updateImages(playerChoice, computerChoice)
+            }
+            else {
+                choiseRandNo()
+                updateImages(playerChoice, bot)
+            }
+        }
+        setInterval(upd_User, 100);
+        function choiseRandNo() {
+            const choices = ['rock', 'scissors', 'paper'];
+            let num = 0;
+            setInterval(() => {
+                num = num === 2 ? 0 : num + 1;
+            }, 500);
+            bot=choices[num]
+        }
+        function startGameButton() {
+            // Сховати кнопку "Почати грати" та показати контент гри
+            document.getElementById('start-button-container').style.display = 'none';
+            document.querySelector('.game-content').style.display = 'block';
+        }
+        function getComputerChoice() {
+            const choices = ['rock', 'scissors', 'paper'];
+            const randomIndex = Math.floor(Math.random() * choices.length);
+            return choices[randomIndex];
+        }
+
+        function getResult(userChoice, computerChoice) {
+            if (userChoice === computerChoice) {
+                return 'Нічия!';
+            }
+            if (
+                (userChoice === 'rock' && computerChoice === 'scissors') ||
+                (userChoice === 'scissors' && computerChoice === 'paper') ||
+                (userChoice === 'paper' && computerChoice === 'rock')
+            ) {
+                playerScore++;
+                return 'Ви виграли!';
+            } else {
+                computerScore++;
+                return 'Ви програли!';
+            }
+        }
+
+        function updateScore() {
+            document.getElementById('score').innerText = `Рахунок - Гравець: ${playerScore}, Комп'ютер: ${computerScore}`;
+        }
+
+        function updateImages(playerChoice, computerChoice) {
+            const images = {
+                rock: 'rock.png',
+                scissors: 'scissors.png',
+                paper: 'paper.png'
+            };
+            document.getElementById('playerChoiceImg').src = images[playerChoice];
+            document.getElementById('computerChoiceImg').src = images[computerChoice];
+            document.getElementById('computerChoiceImg').classList.remove('hidden');
+        }
+
+        function startGame() {
+            if (playerScore >= 3 || computerScore >= 3) {
+                document.getElementById('result').innerText = 'Гра закінчена. Натисніть "Скинути гру", щоб почати нову.';
+                document.querySelector('.continue-button').style.display = 'none'; // Сховати кнопку "Продовжити" після завершення гри
+                return;
+            }
+
+            userChoice = document.getElementById('playerChoice').value;
+            if (!userChoice) {
+                document.getElementById('result').innerText = 'Будь ласка, виберіть варіант.';
+                return;
+            }
+            else {
+                updateImages(userChoice, false);
+            }
+
+            // Приховати зображення вибору комп'ютера до початку гри
+            document.getElementById('computerChoiceImg').classList.add('hidden');
+
+            const computerChoice = getComputerChoice();
+            const result = getResult(userChoice, computerChoice);
+            document.getElementById('result').innerText = `Ви вибрали ${userChoice}, комп'ютер вибрав ${computerChoice}. ${result}`;
+            updateScore();
+            updateImages(userChoice, computerChoice);
+
+            if (playerScore >= 3) {
+                document.getElementById('result').innerText = 'Вітаємо! Ви виграли гру!';
+                document.querySelector('.continue-button').style.display = 'none'; // Сховати кнопку "Продовжити" якщо гравець виграв
+            } else if (computerScore >= 3) {
+                document.getElementById('result').innerText = 'Вибачте, комп\'ютер виграв гру!';
+                document.querySelector('.continue-button').style.display = 'none'; // Сховати кнопку "Продовжити" якщо комп'ютер виграв
+            } else {
+                document.querySelector('.continue-button').style.display = 'block'; // Показати кнопку "Продовжити"
+            }
+        }
+
+        function resetGame() {
+            playerScore = 0;
+            computerScore = 0;
+            userChoice = null;
+            updateScore();
+            document.getElementById('result').innerText = 'Гра скинута. Виберіть один з варіантів, щоб розпочати новий раунд.';
+            document.getElementById('playerChoiceImg').src = '';
+            document.getElementById('computerChoiceImg').src = '';
+            document.getElementById('computerChoiceImg').classList.add('hidden');
+            document.querySelector('.continue-button').style.display = 'none'; // Сховати кнопку "Продовжити"
+        }
+
+        function continueGame() {
+            document.getElementById('result').innerText = '';
+            document.querySelector('.continue-button').style.display = 'none'; // Сховати кнопку "Продовжити"
+            document.getElementById('computerChoiceImg').classList.add('hidden'); // Сховати вибір комп'ютера
+            document.getElementById('playerChoice').value = ''; // Очистити вибір гравця
+        }
+
+        function likeGame() {
+            // Додайте код для обробки лайків
+            alert('Дякую за ваш лайк!');
+        }
+
+        function dislikeGame() {
+            // Додайте код для обробки дизлайків
+            alert('Дякуємо за ваш відгук. Ми постараємося покращити гру!');
+        }
+    </script>
+</body>
+
+</html>

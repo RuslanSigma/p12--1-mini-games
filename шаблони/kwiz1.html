@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Математичний Квіз</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .question-container {
+            margin-top: 20px;
+        }
+        .question {
+            font-size: 24px;
+        }
+        .score, .timer {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+        .controls {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 10px; 
+        }
+        .reset-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #d32f2f;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        .continue-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #388e3c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            display: none;
+        }
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            width: 80px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Математичний Квіз</h1>
+
+    <div class="question-container">
+        <div class="question" id="question">Натисніть "Почати гру", щоб почати!</div>
+        <input type="text" id="answer" placeholder="Відповідь">
+        <button class="button" onclick="checkAnswer()">Відповісти</button>
+    </div>
+
+    <div class="score" id="score">Рахунок: 0</div>
+    <div class="timer" id="timer">Час: 01:00</div>
+
+    <div class="controls">
+        <button class="button" onclick="startGame()">Почати гру</button>
+        <button class="reset-button" onclick="resetGame()">Скинути гру</button>
+        <button class="continue-button" onclick="continueGame()">Продовжити</button>
+    </div>
+
+    <script>
+        let score = 0;
+        let currentAnswer = null;
+        let countdownInterval;
+        let timeElapsed = 0;
+        const timeLimit = 60;
+
+        function startGame() {
+            score = 0;
+            timeElapsed = 0;
+            updateScore();
+            updateTimer();
+            generateQuestion();
+            document.querySelector('.continue-button').style.display = 'none';
+            
+            countdownInterval = setInterval(() => {
+                timeElapsed++;
+                if (timeElapsed >= timeLimit) {
+                    endGame();
+                } else {
+                    updateTimer();
+                }
+            }, 1000);
+        }
+
+        function resetGame() {
+            score = 0;
+            timeElapsed = 0;
+            updateScore();
+            updateTimer();
+            document.getElementById('question').innerText = 'Натисніть "Почати гру", щоб почати!';
+            document.getElementById('answer').value = '';
+            document.querySelector('.continue-button').style.display = 'none'; 
+
+            clearInterval(countdownInterval);
+        }
+
+        function continueGame() {
+            document.getElementById('answer').value = '';
+            generateQuestion();
+            document.querySelector('.continue-button').style.display = 'none'; 
+        }
+
+        function generateQuestion() {
+            const operators = ['+', '-', '*', '/'];
+            const num1 = Math.floor(Math.random() * 10) + 1;
+            const num2 = Math.floor(Math.random() * 10) + 1;
+            const operator = operators[Math.floor(Math.random() * operators.length)];
+
+            let questionText = '';
+            let correctAnswer = 0;
+
+            switch (operator) {
+                case '+':
+                    questionText = `${num1} + ${num2} = ?`;
+                    correctAnswer = num1 + num2;
+                    break;
+                case '-':
+                    questionText = `${num1} - ${num2} = ?`;
+                    correctAnswer = num1 - num2;
+                    break;
+                case '*':
+                    questionText = `${num1} * ${num2} = ?`;
+                    correctAnswer = num1 * num2;
+                    break;
+                case '/':
+
+                    const divisor = Math.floor(Math.random() * 10) + 1;
+                    const dividend = divisor * (Math.floor(Math.random() * 10) + 1);
+                    questionText = `${dividend} / ${divisor} = ?`;
+                    correctAnswer = dividend / divisor;
+                    break;
+            }
+
+            currentAnswer = correctAnswer;
+            document.getElementById('question').innerText = questionText;
+        }
+
+        function checkAnswer() {
+            const userAnswer = parseFloat(document.getElementById('answer').value);
+            if (userAnswer === currentAnswer) {
+                score++;
+                updateScore();
+                document.getElementById('question').innerText = 'Правильно! Натисніть "Продовжити", щоб отримати нове питання.';
+                document.querySelector('.continue-button').style.display = 'block';
+            } else {
+                document.getElementById('question').innerText = 'Неправильно! Спробуйте ще раз.';
+            }
+        }
+
+        function updateScore() {
+            document.getElementById('score').innerText = `Рахунок: ${score}`;
+        }
+
+        function updateTimer() {
+            const minutes = Math.floor((timeLimit - timeElapsed) / 60);
+            const seconds = (timeLimit - timeElapsed) % 60;
+            document.getElementById('timer').innerText = `Час: ${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+        }
+
+        function endGame() {
+            clearInterval(countdownInterval);
+            document.getElementById('answer').value = '';
+            document.getElementById('question').innerText = 'Час закінчився! ' + getResultMessage();
+
+            document.getElementById('timer').innerText = 'Час: 00:00';
+            document.querySelector('.continue-button').style.display = 'none';
+        }
+
+        function getResultMessage() {
+            let resultMessage = '';
+
+            if (score < 5) {
+                resultMessage = 'Погано. Ваш результат менше 5.';
+            } else if (score < 10) {
+                resultMessage = 'Добре. Ваш результат менше 10.';
+            } else {
+                resultMessage = 'Чудово! Ваш результат 15 і більше.';
+            }
+
+            return resultMessage;
+        }
+    </script>
+</body>
+</html>

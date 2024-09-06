@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ua">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Тік-Так-Тоу з розумним ботом</title>
+        <style>
+            body {
+                font-family: sans-serif;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+                background-color: #F0F0F0;
+                margin: 0;
+            }
+    
+            h1 {
+                margin-bottom: 20px;
+                color: #003366; /* Темно-синій */
+            }
+    
+            .board {
+                display: grid;
+                gap: 5px;
+                grid-template-columns: repeat(3, 50px);
+                margin-bottom: 20px;
+                visibility: hidden; /* Спочатку приховано */
+            }
+    
+            .board .cell {
+                width: 50px;
+                height: 50px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 24px;
+                background-color: #FFFF00; /* Жовтий */
+                border: 2px solid #003366; /* Темно-синій */
+                cursor: pointer;
+                color: #003366; /* Темно-синій */
+                transition: background-color 0.3s, color 0.3s;
+            }
+    
+            .board .cell:hover {
+                background-color: #C0C0C0; /* Світло-сірий */
+                color: #000000; /* Чорний */
+            }
+    
+            .status {
+                font-size: 20px;
+                margin-bottom: 20px;
+                color: #003366; /* Темно-синій */
+            }
+    
+            .controls {
+                margin-bottom: 20px;
+                color: #003366; /* Темно-синій */
+            }
+    
+            .controls label {
+                margin-right: 10px;
+            }
+    
+            .controls button {
+                padding: 5px 10px;
+                font-size: 16px;
+                background-color: #003366; /* Темно-синій */
+                color: #FFFF00; /* Жовтий */
+                border: none;
+                cursor: pointer;
+                transition: background-color 0.3s, color 0.3s;
+            }
+    
+            .controls button:hover {
+                background-color: #000000; /* Чорний */
+                color: #FFFF00; /* Жовтий */
+            }
+        </style>
+    </head>
+    
+    <body>
+        <h1>Тік-Так-Тоу з розумним ботом</h1>
+    
+        <div class="controls">
+            <label>
+                <input type="radio" name="symbol" value="X" checked> Грати за X
+            </label>
+            <label>
+                <input type="radio" name="symbol" value="O"> Грати за O
+            </label>
+            <button onclick="startGame()">Почати гру</button>
+        </div>
+    
+        <div class="board"></div>
+        <div class="status"></div>
+    
+    <script>
+        let board = ['', '', '', '', '', '', '', '', ''];
+        let currentPlayer = 'X';
+        let playerSymbol = 'X';
+        let botSymbol = 'O';
+        let gameActive = false;
+        let updateInterval;
+
+        const winningCombinations = [
+            [0, 1, 2], [3, 4, 5], [6, 7, 8], // Горизонталі
+            [0, 3, 6], [1, 4, 7], [2, 5, 8], // Вертикалі
+            [0, 4, 8], [2, 4, 6] // Діагоналі
+        ];
+
+        function startGame() {
+            const selectedSymbol = document.querySelector('input[name="symbol"]:checked').value;
+            playerSymbol = selectedSymbol;
+            botSymbol = selectedSymbol === 'X' ? 'O' : 'X';
+            currentPlayer = 'X';
+            board = ['', '', '', '', '', '', '', '', ''];
+            gameActive = true;
+
+            const boardElement = document.querySelector('.board');
+            boardElement.style.gridTemplateColumns = `repeat(3, 50px)`;
+            boardElement.innerHTML = '';
+            for (let i = 0; i < 9; i++) {
+                const cell = document.createElement('div');
+                cell.className = 'cell';
+                cell.addEventListener('click', () => makeMove(i));
+                boardElement.appendChild(cell);
+            }
+            boardElement.style.visibility = 'visible'; // Показуємо поле гри
+            updateStatus();
+
+            // Оновлення дошки кожну секунду після старту
+            clearInterval(updateInterval); // Очищення попереднього інтервалу
+            updateInterval = setInterval(updateBoard, 1000);
+
+            if (botSymbol === 'X') botMove(); // Якщо бот грає за X, він робить перший хід
+        }
+
+        function makeMove(index) {
+            if (gameActive && !board[index] && !checkWinner(playerSymbol) && !checkWinner(botSymbol)) {
+                board[index] = currentPlayer;
+                document.querySelectorAll('.cell')[index].innerText = currentPlayer;
+                if (checkWinner(currentPlayer)) {
+                   
+                    clearInterval(updateInterval); // Очищення інтервалу
+                    updateStatus(currentPlayer === botSymbol ? "Бот переміг!" : `${currentPlayer} виграв!`); 
+                   
+                } else if (board.every(cell => cell !== '')) {
+                    
+                    clearInterval(updateInterval); // Очищення інтервалу
+                    updateStatus('Нічия!');
+                } else {
+                    currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+                    if (currentPlayer === botSymbol) botMove();
+                    updateStatus();
+                }
+            }
+        }
+
+        function botMove() {
+            if(gameActive){
+            let move = findBestMove(botSymbol);
+            if (move === -1) move = findBestMove(playerSymbol);
+            if (move === -1 && board[4] === '') move = 4;
+            if (move === -1) {
+                const corners = [0, 2, 6, 8];
+                for (let corner of corners) {
+                    if (board[corner] === '') {
+                        move = corner;
+                        break;
+                    }
+                }
+            }
+            if (move === -1) move = board.findIndex(cell => cell === '');
+            board[move] = botSymbol;
+            document.querySelectorAll('.cell')[move].innerText = botSymbol;
+        }
+            if (checkWinner(botSymbol)) {
+                
+                clearInterval(updateInterval); // Очищення інтервалу
+                updateStatus("Бот переміг!");
+               
+            } else if (board.every(cell => cell !== '')) {
+                
+                clearInterval(updateInterval); // Очищення інтервалу
+                updateStatus('Нічия!');
+                
+            } else {
+                currentPlayer = playerSymbol;
+            }
+        }
+
+        function findBestMove(symbol) {
+            for (let [a, b, c] of winningCombinations) {
+                if (board[a] === symbol && board[b] === symbol && board[c] === '') return c;
+                if (board[a] === symbol && board[b] === '' && board[c] === symbol) return b;
+                if (board[a] === '' && board[b] === symbol && board[c] === symbol) return a;
+            }
+            return -1;
+        }
+
+        function checkWinner(symbol) {
+            return winningCombinations.some(combination =>
+                combination.every(index => board[index] === symbol)
+            );
+        }
+
+        function updateBoard() {
+            // Оновлення інформації про дошку (якщо потрібно)
+            document.querySelectorAll('.cell').forEach((cell, index) => {
+                cell.innerText = board[index];
+            });
+        }
+l=0;
+        function updateStatus(message) {
+            console.log(l+"    "+message);
+            l+=1;
+            console.log(document.querySelector('.status'));
+            if( message==='Бот переміг!'){
+                currentPlayer= 'Бот переміг!';
+                document.querySelector('.status').innerText = "Бот переміг!"
+               gameActive = false; 
+               
+            }
+            else if(message==='Нічия!' ){
+                currentPlayer= 'Нічия!' ;
+                document.querySelector('.status').innerText = "Нічия!"
+                gameActive = false; 
+            }
+            else{
+                console.log(l+"  rtshujghkjlhlhjhkjg  "+message);
+                if(currentPlayer=='O'||currentPlayer=='X')
+                {
+                document.querySelector('.status').innerText = `Хід: ${currentPlayer}`;    
+                }
+                else{
+                    document.querySelector('.status').innerText = ` ${currentPlayer}`; 
+                }
+                
+            }
+        }
+        
+    </script>
+</body>
+
+</html>

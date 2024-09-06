@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сапер</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .board {
+            display: grid;
+            gap: 2px;
+        }
+
+        .cell {
+            width: 30px;
+            height: 30px;
+            background-color: #ccc;
+            text-align: center;
+            line-height: 30px;
+            cursor: pointer;
+            font-size: 16px;
+            border: 1px solid #999;
+        }
+
+        .cell.open {
+            background-color: #eee;
+            cursor: default;
+        }
+
+        .cell.mine {
+            background-color: red;
+        }
+
+        .cell.flag {
+            background-color: yellow;
+            cursor: default;
+        }
+
+        .cell.number-1 { color: blue; }
+        .cell.number-2 { color: green; }
+        .cell.number-3 { color: red; }
+        .cell.number-4 { color: darkblue; }
+        .cell.number-5 { color: darkred; }
+        .cell.number-6 { color: darkcyan; }
+        .cell.number-7 { color: black; }
+        .cell.number-8 { color: gray; }
+
+        .controls {
+            margin-bottom: 20px;
+        }
+
+        .difficulty-buttons button {
+            margin: 0 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Сапер</h1>
+    <div class="controls">
+        <div class="difficulty-buttons">
+            <button onclick="startGame('easy')">Легко</button>
+            <button onclick="startGame('medium')">Середнє</button>
+            <button onclick="startGame('hard')">Важко</button>
+        </div>
+        <button onclick="resetGame()">Почати нову гру</button>
+    </div>
+    <div class="board"></div>
+    <script>
+        let rows = 10;
+        let cols = 10;
+        let mineCount = 10;
+        let board = [];
+        let gameOver = false;
+        let cellsLeft = rows * cols - mineCount;
+
+        function startGame(difficulty) {
+            switch(difficulty) {
+                case 'easy':
+                    rows = 8;
+                    cols = 8;
+                    mineCount = 10;
+                    break;
+                case 'medium':
+                    rows = 16;
+                    cols = 16;
+                    mineCount = 40;
+                    break;
+                case 'hard':
+                    rows = 16;
+                    cols = 30;
+                    mineCount = 99;
+                    break;
+                default:
+                    rows = 10;
+                    cols = 10;
+                    mineCount = 10;
+            }
+            resetGame();
+        }
+
+        function createBoard() {
+            const boardElement = document.querySelector('.board');
+            boardElement.innerHTML = '';
+            boardElement.style.gridTemplateColumns = `repeat(${cols}, 30px)`;
+            board = Array.from({ length: rows }, () => Array(cols).fill(0));
+
+            let minesPlaced = 0;
+            while (minesPlaced < mineCount) {
+                const row = Math.floor(Math.random() * rows);
+                const col = Math.floor(Math.random() * cols);
+                if (board[row][col] !== 'M') {
+                    board[row][col] = 'M';
+                    updateAdjacentCells(row, col);
+                    minesPlaced++;
+                }
+            }
+
+            const fragment = document.createDocumentFragment();
+            for (let r = 0; r < rows; r++) {
+                for (let c = 0; c < cols; c++) {
+                    const cell = document.createElement('div');
+                    cell.className = 'cell';
+                    cell.dataset.row = r;
+                    cell.dataset.col = c;
+                    cell.addEventListener('click', handleClick);
+                    cell.addEventListener('contextmenu', handleRightClick);
+                    fragment.appendChild(cell);
+                }
+            }
+            boardElement.appendChild(fragment);
+        }
+
+        function updateAdjacentCells(row, col) {
+            for (let r = row - 1; r <= row + 1; r++) {
+                for (let c = col - 1; c <= col + 1; c++) {
+                    if (r >= 0 && r < rows && c >= 0 && c < cols && board[r][c] !== 'M') {
+                        board[r][c]++;
+                    }
+                }
+            }
+        }
+
+        function handleClick(event) {
+            if (gameOver) return;
+            const cell = event.target;
+            const row = parseInt(cell.dataset.row);
+            const col = parseInt(cell.dataset.col);
+
+            if (cell.classList.contains('open') || cell.classList.contains('flag')) return;
+
+            if (board[row][col] === 'M') {
+                cell.classList.add('mine');
+                revealAllMines();
+                alert('Гра закінчена! Ви підірвали міну.');
+                gameOver = true;
+                return;
+            }
+
+            openCell(row, col);
+
+            if (cellsLeft === 0) {
+                alert('Вітаємо! Ви виграли!');
+                gameOver = true;
+            }
+        }
+
+        function handleRightClick(event) {
+            event.preventDefault();
+            if (gameOver) return;
+            const cell = event.target;
+
+            if (cell.classList.contains('open')) return;
+
+            if (cell.classList.contains('flag')) {
+                cell.classList.remove('flag');
+            } else {
+                cell.classList.add('flag');
+            }
+        }
+
+        function openCell(row, col) {
+            const cell = document.querySelector(`.cell[data-row="${row}"][data-col="${col}"]`);
+
+            if (cell.classList.contains('open') || cell.classList.contains('flag')) return;
+
+            cell.classList.add('open');
+            cellsLeft--;
+
+            if (board[row][col] > 0) {
+                cell.classList.add(`number-${board[row][col]}`);
+                cell.innerText = board[row][col];
+            } else {
+                cell.innerText = '';
+
+                for (let r = row - 1; r <= row + 1; r++) {
+                    for (let c = col - 1; c <= col + 1; c++) {
+                        if (r >= 0 && r < rows && c >= 0 && c < cols && (r !== row || c !== col)) {
+                            openCell(r, c);
+                        }
+                    }
+                }
+            }
+        }
+
+        function revealAllMines() {
+            for (let r = 0; r < rows; r++) {
+                for (let c = 0; c < cols; c++) {
+                    if (board[r][c] === 'M') {
+                        const cell = document.querySelector(`.cell[data-row="${r}"][data-col="${c}"]`);
+                        cell.classList.add('mine');
+                    }
+                }
+            }
+        }
+
+        function resetGame() {
+            gameOver = false;
+            cellsLeft = rows * cols - mineCount;
+            createBoard();
+        }
+
+        startGame('hard');
+    </script>
+</body>
+</html>

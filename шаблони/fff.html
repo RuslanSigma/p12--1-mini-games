@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ua">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Смотреть аниме онлайн</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(270deg, #4A90E2, #F7CA18);
+            background-size: 400% 400%;
+            animation: gradientAnimation 15s ease infinite;
+            color: #ECEFF1;
+        }
+
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        header {
+            background-color: #7B68EE;
+            color: #ECEFF1;
+            padding: 10px 0;
+            text-align: center;
+            border-bottom: 5px solid #4A90E2;
+        }
+
+        .container {
+            display: flex;
+            margin: 20px auto;
+            width: 90%;
+            max-width: 1200px;
+        }
+
+        .sidebar {
+            width: 25%;
+            padding: 20px;
+            background-color: #a097dfbd;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .content {
+            width: 75%;
+            padding: 20px;
+            background-color: #5D3FD3;
+            border-radius: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .content2 {
+            width: 75%;
+            padding: 20px;
+            background-color: #5D3FD3;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+
+        .anime-card {
+            background-color: #7A67EE;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            width: 32%;
+            margin-right: 1%;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            color: #ECEFF1;
+        }
+
+        .anime-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .anime-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .anime-card h3 {
+            margin-top: 10px;
+            margin-bottom: 5px;
+        }
+
+        .sidebar h2 {
+            color: #FFD700;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar li {
+            margin-bottom: 10px;
+        }
+
+        .sidebar a {
+            color: #FFD700;
+            text-decoration: none;
+        }
+
+        .sidebar a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Смотреть лучшие аниме</h1>
+        <p>Быстрый поиск...</p>
+    </header>
+
+    <div class="container">
+        <div class="sidebar">
+            <h2>Навигация по сайту</h2>
+            <ul>
+                <li><a href="#">Ігри</a></li>
+                <li><a href="#">Квізи</а></li>
+                <li><a href="#">Тести</а></li>
+                <li><a href="#">Досягнення</а></li>
+            </ul>
+        </div>
+
+        <div class="content2">
+            <h2>Вибрати розваги</h2>
+            <div class="content">
+                <a href="#" class="anime-card">
+                    <img src="https://via.placeholder.com/150x150" alt="Атака титанов">
+                    <h3>Ігра1</h3>
+                </a>
+                <a href="#" class="anime-card">
+                    <img src="https://via.placeholder.com/150x150" alt="Стальной алхимик">
+                    <h3>Ігра2</h3>
+                </a>
+                <a href="#" class="anime-card">
+                    <img src="https://via.placeholder.com/150x150" alt="Ванпанчмен">
+                    <h3>Ігра3</h3>
+                </a>
+                <a href="#" class="anime-card">
+                    <img src="https://via.placeholder.com/150x150" alt="Мастера меча онлайн">
+                    <h3>Ігра4</h3>
+                </a>
+                <a href="#" class="anime-card">
+                    <img src="https://via.placeholder.com/150x150" alt="Клинок, рассекающий демонов">
+                    <h3>Ігра5</h3>
+                </a>
+                <a href="#" class="anime-card">
+                    <img src="https://via.placeholder.com/150x150" alt="Моя геройская академия">
+                    <h3>Ігра6</h3>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

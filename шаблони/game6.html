@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tetris</title>
+    <style>
+        body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+}
+
+#tetris {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+canvas {
+    border: 2px solid #000;
+}
+
+#score {
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+    </style>
+</head>
+<body>
+    <h1>Tetris</h1>
+    <div id="tetris">
+        <canvas id="gameCanvas" width="300" height="600"></canvas>
+        <div id="score">Score: 0</div>
+    </div>
+    <script>
+        const canvas = document.getElementById('gameCanvas');
+const ctx = canvas.getContext('2d');
+
+const rows = 20;
+const cols = 10;
+const blockSize = 30;
+const board = [];
+let score = 0;
+let gameSpeed=600;
+const shapes = [
+    [[1, 1, 1, 1]], 
+    [[1, 1], [1, 1]], 
+    [[0, 1, 0], [1, 1, 1]], 
+    [[1, 1, 0], [0, 1, 1]], 
+    [[0, 1, 1], [1, 1, 0]]  
+];
+
+let currentPiece = getNewPiece();
+let posX = 3, posY = 0;
+
+function initBoard() {
+    for (let r = 0; r < rows; r++) {
+        board[r] = Array(cols).fill(0);
+    }
+}
+
+function drawBoard() {
+    for (let r = 0; r < rows; r++) {
+        for (let c = 0; c < cols; c++) {
+            ctx.fillStyle = board[r][c] ? 'blue' : 'white';
+            ctx.fillRect(c * blockSize, r * blockSize, blockSize, blockSize);
+            ctx.strokeRect(c * blockSize, r * blockSize, blockSize, blockSize);
+        }
+    }
+}
+
+function drawPiece() {
+    ctx.fillStyle = 'red';
+    currentPiece.shape.forEach((row, rIdx) => {
+        row.forEach((cell, cIdx) => {
+            if (cell) {
+                ctx.fillRect((posX + cIdx) * blockSize, (posY + rIdx) * blockSize, blockSize, blockSize);
+                ctx.strokeRect((posX + cIdx) * blockSize, (posY + rIdx) * blockSize, blockSize, blockSize);
+            }
+        });
+    });
+}
+
+function getNewPiece() {
+    const shape = shapes[Math.floor(Math.random() * shapes.length)];
+    return { shape };
+}
+
+function movePiece(dir) {
+    const newX = posX + dir;
+    if (!collision(newX, posY)) {
+        posX = newX;
+    }
+}
+
+function dropPiece() {
+    if (!collision(posX, posY + 1)) {
+        posY++;
+    } else {
+        mergePiece();
+        clearLines();
+        currentPiece = getNewPiece();
+        posX = 3;
+        posY = 0;
+        if (collision(posX, posY)) {
+            alert("Game Over");
+            initBoard();
+            score = 0;
+            document.getElementById('score').textContent = `Score: ${score}`;
+        }
+    }
+}
+
+function mergePiece() {
+    currentPiece.shape.forEach((row, rIdx) => {
+        row.forEach((cell, cIdx) => {
+            if (cell) {
+                board[posY + rIdx][posX + cIdx] = cell;
+            }
+        });
+    });
+}
+
+function collision(x, y) {
+    for (let r = 0; r < currentPiece.shape.length; r++) {
+        for (let c = 0; c < currentPiece.shape[r].length; c++) {
+            if (
+                currentPiece.shape[r][c] &&
+                (board[y + r] && board[y + r][x + c]) !== 0
+            ) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
+function clearLines() {
+    for (let r = rows - 1; r >= 0; r--) {
+        if (board[r].every(cell => cell !== 0)) {
+            board.splice(r, 1);
+            board.unshift(Array(cols).fill(0));
+            score += 10;
+            document.getElementById('score').textContent = `Score: ${score}`;
+        }
+    }
+}
+
+function rotatePiece() {
+    const rotatedShape = currentPiece.shape[0].map((val, index) =>
+        currentPiece.shape.map(row => row[index]).reverse()
+    );
+    const oldShape = currentPiece.shape;
+    currentPiece.shape = rotatedShape;
+    if (collision(posX, posY)) {
+        currentPiece.shape = oldShape; 
+    }
+}
+
+function gameLoop() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    drawBoard();
+    drawPiece();
+    dropPiece();
+    if(score=0)
+    {
+        gameSpeed=600
+    }
+    else if(score>0 && score<=100)
+    {
+        gameSpeed=400
+    }
+    else if(score>100 && score<=300)
+    {
+        gameSpeed=300
+    }
+    else if(score>300 && score<=500)
+    {
+        gameSpeed=200
+    }
+    else if(score>500 && score<=1000)
+    {
+        gameSpeed=100
+    }
+    else if(score>1000 )
+    {
+        gameSpeed=60
+    }
+}
+
+initBoard();
+setInterval(gameLoop, 500);
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'a') {
+        movePiece(-1);
+        drawBoard();
+        drawPiece();
+        
+    } else if (e.key === 'd') {
+        movePiece(1);
+        drawBoard();
+        drawPiece();
+    } else if (e.key === 's') {        
+        drawBoard();
+        drawPiece();
+        
+        dropPiece();
+
+    } else if (e.key === ' ') {
+        rotatePiece();
+        drawBoard();
+        drawPiece();
+        
+    }
+});
+
+    </script>
+</body>
+</html>
