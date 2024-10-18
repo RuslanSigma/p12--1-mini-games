@@ -1,0 +1,142 @@
+﻿@page
+@model ігри.Pages.kwiz2Model
+@{
+}
+<div class="quiz-container">
+    <h1>Космічна вікторина</h1>
+    <h2 id="question-number">Питання 1/10</h2>
+    <p class="question" id="question-text">Яке явище можна спостерігати, коли хмари плазми, випущені Сонцем, досягають Землі?</p>
+    <img src="solar_flare.jpg" alt="Сонячний спалах" id="question-image">
+    <form id="quiz-form">
+        <div class="option-container">
+            <div class="option">
+                <input type="radio" id="option1" name="answer" value="Урагани">
+                <label for="option1" id="label1">Урагани</label>
+            </div>
+            <div class="option">
+                <input type="radio" id="option2" name="answer" value="Полярні сяйва">
+                <label for="option2" id="label2">Полярні сяйва</label>
+            </div>
+            <div class="option">
+                <input type="radio" id="option3" name="answer" value="Землетруси">
+                <label for="option3" id="label3">Землетруси</label>
+            </div>
+        </div>
+        <button type="button" onclick="submitAnswer()">Відповісти</button>
+    </form>
+    <div id="feedback" class="feedback"></div>
+    <button type="button" id="next-button" style="display:none;" onclick="nextQuestion()">Далі</button>
+</div>
+<script>
+    const questions = [
+        {
+            text: 'Яке явище можна спостерігати, коли хмари плазми, випущені Сонцем, досягають Землі?',
+            image: 'solar_flare.jpg',
+            options: ['Урагани', 'Полярні сяйва', 'Землетруси'],
+            correct: 'Полярні сяйва'
+        },
+        {
+            text: 'Як називається найближча до Сонця планета?',
+            image: 'mercury.jpg',
+            options: ['Меркурій', 'Венера', 'Земля'],
+            correct: 'Меркурій'
+        },
+        {
+            text: 'Як називається друга за віддаленістю від Сонця планета?',
+            image: 'venus.jpg',
+            options: ['Венера', 'Земля', 'Марс'],
+            correct: 'Венера'
+        },
+        {
+            text: 'Як називається найбільша планета в Сонячній системі?',
+            image: 'jupiter.jpg',
+            options: ['Юпітер', 'Сатурн', 'Нептун'],
+            correct: 'Юпітер'
+        },
+        {
+            text: 'Яка планета відома своїми кільцями?',
+            image: 'saturn.jpg',
+            options: ['Юпітер', 'Сатурн', 'Уран'],
+            correct: 'Сатурн'
+        },
+        {
+            text: 'Яка планета знаходиться між Венерою та Марсом?',
+            image: 'earth.jpg',
+            options: ['Меркурій', 'Земля', 'Юпітер'],
+            correct: 'Земля'
+        },
+        {
+            text: 'Яка планета має назву бога війни?',
+            image: 'mars.jpg',
+            options: ['Марс', 'Сатурн', 'Нептун'],
+            correct: 'Марс'
+        },
+        {
+            text: 'Яка планета найвіддаленіша від Сонця?',
+            image: 'neptune.jpg',
+            options: ['Уран', 'Нептун', 'Плутон'],
+            correct: 'Нептун'
+        },
+        {
+            text: 'Яка карликова планета раніше була дев’ятою планетою?',
+            image: 'pluto.jpg',
+            options: ['Плутон', 'Церера', 'Хаумеа'],
+            correct: 'Плутон'
+        },
+        {
+            text: 'Як називається найбільший супутник Сатурна?',
+            image: 'titan.jpg',
+            options: ['Титан', 'Європа', 'Ганімед'],
+            correct: 'Титан'
+        }
+    ];
+
+    let currentQuestionIndex = 0;
+
+    function submitAnswer() {
+        const selectedOption = document.querySelector('input[name="answer"]:checked');
+        const feedback = document.getElementById('feedback');
+
+        if (selectedOption) {
+            const isCorrect = selectedOption.value === questions[currentQuestionIndex].correct;
+            feedback.textContent = isCorrect ? 'Правильно!' : 'Неправильно!';
+            feedback.className = `feedback ${isCorrect ? 'correct' : 'incorrect'}`;
+            feedback.style.display = 'block';
+            document.getElementById('next-button').style.display = 'block';
+            document.querySelectorAll('input[name="answer"]').forEach(input => {
+                input.disabled = true;
+            });
+        }
+    }
+
+    function nextQuestion() {
+        currentQuestionIndex++;
+        if (currentQuestionIndex < questions.length) {
+            document.getElementById('next-button').style.display = 'none';
+            document.getElementById('feedback').style.display = 'none';
+            loadQuestion();
+        } else {
+            document.getElementById('quiz-form').innerHTML = '<p>Ви завершили вікторину!</p>';
+            document.getElementById('next-button').style.display = 'none';
+        }
+    }
+
+    function loadQuestion() {
+        const question = questions[currentQuestionIndex];
+        document.getElementById('question-number').innerText = `Питання ${currentQuestionIndex + 1}/${questions.length}`;
+        document.getElementById('question-text').innerText = question.text;
+        document.getElementById('question-image').src = question.image;
+        document.getElementById('label1').innerText = question.options[0];
+        document.getElementById('label2').innerText = question.options[1];
+        document.getElementById('label3').innerText = question.options[2];
+        document.getElementById('option1').value = question.options[0];
+        document.getElementById('option2').value = question.options[1];
+        document.getElementById('option3').value = question.options[2];
+        document.getElementById('quiz-form').reset();
+        document.querySelectorAll('input[name="answer"]').forEach(input => {
+            input.disabled = false;
+        });
+    }
+
+    loadQuestion();
+</script>

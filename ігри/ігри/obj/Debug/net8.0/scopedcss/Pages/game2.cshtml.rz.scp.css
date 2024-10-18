@@ -1,0 +1,132 @@
+body[b-b11r59os1r] {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 50px;
+    background-color: #36393f;
+    color: white;
+}
+
+.button[b-b11r59os1r] {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.result[b-b11r59os1r] {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.score[b-b11r59os1r] {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.controls[b-b11r59os1r] {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.reset-button[b-b11r59os1r] {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #d32f2f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.continue-button[b-b11r59os1r] {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #388e3c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    display: none;
+}
+
+.select-container[b-b11r59os1r] {
+    margin-top: 20px;
+}
+
+    .select-container select[b-b11r59os1r] {
+        padding: 10px;
+        font-size: 16px;
+    }
+
+.images[b-b11r59os1r] {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+    .images div[b-b11r59os1r] {
+        margin: 0 20px;
+        text-align: center;
+    }
+
+    .images img[b-b11r59os1r] {
+        width: 100px;
+        height: 100px;
+    }
+
+        .images img.hidden[b-b11r59os1r] {
+            display: none;
+        }
+
+.game-info[b-b11r59os1r] {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    padding: 0 20px;
+}
+
+    .game-info .text[b-b11r59os1r] {
+        flex: 1;
+    }
+
+    .game-info img[b-b11r59os1r] {
+        width: 300px;
+        height: auto;
+        margin-left: 20px;
+    }
+
+.like-dislike[b-b11r59os1r] {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+    padding-right: 20px;
+}
+
+    .like-dislike button[b-b11r59os1r] {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        margin: 0 10px;
+    }
+
+        .like-dislike button.like[b-b11r59os1r] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .like-dislike button.dislike[b-b11r59os1r] {
+            background-color: #f44336;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+.game-content[b-b11r59os1r] {
+    display: none;
+}

@@ -2,78 +2,8 @@
 @model ігри.Pages.kwiz1Model
 @{
 }
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Математичний Квіз</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 50px;
-            background-color: #f4f4f4;
-            color: white;
-        }
 
-        .button {
-            margin: 10px;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-        }
 
-        .question-container {
-            margin-top: 20px;
-        }
-
-        .question {
-            font-size: 24px;
-        }
-
-        .score, .timer {
-            margin-top: 20px;
-            font-size: 18px;
-        }
-
-        .controls {
-            margin-top: 20px;
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        .reset-button {
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            background-color: #d32f2f;
-            color: white;
-            border: none;
-            border-radius: 5px;
-        }
-
-        .continue-button {
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            background-color: #388e3c;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            display: none;
-        }
-
-        input[type="text"] {
-            padding: 10px;
-            font-size: 16px;
-            width: 80px;
-            text-align: center;
-        }
-    </style>
-</head>
-<body>
     <h1>Математичний Квіз</h1>
 
     <div class="question-container">
@@ -81,10 +11,12 @@
         <input type="text" id="answer" placeholder="Відповідь">
         <button class="button" onclick="checkAnswer()">Відповісти</button>
     </div>
-
-    <div class="score" id="score">Рахунок: 0</div>
-    <div class="timer" id="timer">Час: 01:00</div>
-
+    <form id="scoreForm" method="post" action="/kwiz1">
+        <div class="score" id="score" name="score">Рахунок: 0</div>
+        <input type="hidden" id="scoreValue" name="score" value="0" />
+        <div class="timer" id="timer">Час: 01:00</div>
+        <button type="submit" class="button">Зберегти рахунок</button>
+    </form>
     <div class="controls">
         <button class="button" onclick="startGame()">Почати гру</button>
         <button class="reset-button" onclick="resetGame()">Скинути гру</button>
@@ -214,5 +146,4 @@
             return resultMessage;
         }
     </script>
-</body>
-</html>
+

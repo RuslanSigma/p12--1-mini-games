@@ -1,0 +1,114 @@
+body[b-fkpadfdi9i] {
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #2C2F33; /* Темно-сірий фон */
+    margin: 0;
+    color: #FFFFFF; /* Білий текст для всього контенту */
+}
+
+h1[b-fkpadfdi9i] {
+    margin-bottom: 20px;
+    color: #FFFFFF; /* Білий текст заголовка */
+}
+
+.board[b-fkpadfdi9i] {
+    display: grid;
+    gap: 5px;
+    height:170px;
+    width:170px;
+    grid-template-columns: repeat(3, 50px);
+    margin-bottom: 20px;
+    visibility: hidden; /* Спочатку приховано */
+}
+.board .cell[b-fkpadfdi9i] {
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        background-color: #7289DA; /* Темно-синій Discord */
+        border: 2px solid #99AAB5; /* Світло-сірий для контурів */
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s;
+        color: #FFFFFF; /* Білий текст всередині клітинок */
+    }
+.board .cell:hover[b-fkpadfdi9i] {
+            background-color: #99AAB5; /* Світло-сірий при наведенні */
+            color: #2C2F33; /* Темно-сірий текст при наведенні */
+        }
+
+.status[b-fkpadfdi9i] {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #FFFFFF; /* Білий текст для статусу гри */
+}
+
+.controls[b-fkpadfdi9i] {
+    margin-bottom: 20px;
+    color: #FFFFFF; /* Білий текст для контролів */
+}
+
+    .controls label[b-fkpadfdi9i] {
+        margin-right: 10px;
+    }
+
+    .controls button[b-fkpadfdi9i] {
+        padding: 5px 10px;
+        font-size: 16px;
+        background-color: #7289DA; /* Темно-синій Discord */
+        color: #FFFFFF; /* Білий текст на кнопках */
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+        .controls button:hover[b-fkpadfdi9i] {
+            background-color: #99AAB5; /* Світло-сірий при наведенні */
+            color: #2C2F33; /* Темно-сірий текст при наведенні */
+        }
+
+.game-info[b-fkpadfdi9i] {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 300px;
+    margin-right: 20px;
+    color: #FFFFFF; /* Білий текст для інформації про гру */
+}
+
+    .game-info h2[b-fkpadfdi9i] {
+        font-size: 18px;
+        margin: 0;
+        color: #FFFFFF; /* Білий текст для підзаголовків */
+    }
+
+    .game-info p[b-fkpadfdi9i],
+    .game-info ul[b-fkpadfdi9i] {
+        font-size: 16px;
+        margin: 5px 0;
+    }
+
+    .game-info ul[b-fkpadfdi9i] {
+        padding-left: 20px;
+    }
+
+    .game-info img[b-fkpadfdi9i] {
+        width: 300px;
+        height: auto;
+        margin-left: 20px;
+    }
+
+    .game-info .text[b-fkpadfdi9i] {
+        flex: 1;
+    }
+
+.game-content[b-fkpadfdi9i] {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}

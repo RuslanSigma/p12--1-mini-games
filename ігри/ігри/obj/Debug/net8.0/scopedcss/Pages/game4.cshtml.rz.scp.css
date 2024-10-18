@@ -1,0 +1,84 @@
+body[b-yi06wppcht] {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+}
+
+h1[b-yi06wppcht] {
+    margin-bottom: 20px;
+}
+
+.board[b-yi06wppcht] {
+    display: grid;
+    gap: 2px;
+}
+
+.cell[b-yi06wppcht] {
+    width: 30px;
+    height: 30px;
+    background-color: #ccc;
+    text-align: center;
+    line-height: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    border: 1px solid #999;
+}
+
+    .cell.open[b-yi06wppcht] {
+        background-color: #eee;
+        cursor: default;
+    }
+
+    .cell.mine[b-yi06wppcht] {
+        background-color: red;
+    }
+
+    .cell.flag[b-yi06wppcht] {
+        background-color: yellow;
+        cursor: default;
+    }
+
+    .cell.number-1[b-yi06wppcht] {
+        color: blue;
+    }
+
+    .cell.number-2[b-yi06wppcht] {
+        color: green;
+    }
+
+    .cell.number-3[b-yi06wppcht] {
+        color: red;
+    }
+
+    .cell.number-4[b-yi06wppcht] {
+        color: darkblue;
+    }
+
+    .cell.number-5[b-yi06wppcht] {
+        color: darkred;
+    }
+
+    .cell.number-6[b-yi06wppcht] {
+        color: darkcyan;
+    }
+
+    .cell.number-7[b-yi06wppcht] {
+        color: black;
+    }
+
+    .cell.number-8[b-yi06wppcht] {
+        color: gray;
+    }
+
+.controls[b-yi06wppcht] {
+    margin-bottom: 20px;
+}
+
+.difficulty-buttons button[b-yi06wppcht] {
+    margin: 0 5px;
+}

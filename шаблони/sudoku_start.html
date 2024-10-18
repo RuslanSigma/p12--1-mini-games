@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Судоку з нотатками</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .controls,
+        .score,
+        .notes {
+            margin-bottom: 15px;
+        }
+
+        #sudoku-board {
+            border-collapse: collapse;
+            margin: 20px auto;
+            font-size: 22px;
+            background-color: #f8f8f8;
+        }
+
+        #sudoku-board td {
+            width: 60px;
+            height: 60px;
+            border: 1px solid #ccc;
+            text-align: center;
+            vertical-align: middle;
+            font-size: 22px;
+            position: relative;
+        }
+
+        #sudoku-board tr:nth-child(3n) td,
+        #sudoku-board td:nth-child(3n) {
+            border-right: 3px solid #333;
+            border-bottom: 3px solid #333;
+        }
+
+        .highlight {
+            background-color: #cceeff;
+        }
+
+        .selected {
+            background-color: #aaddff;
+        }
+
+        .notes button {
+            width: 40px;
+            height: 40px;
+            margin: 5px;
+            font-size: 18px;
+        }
+
+        .note-buttons {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .controls,
+        .score,
+        .notes {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .score span {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .hint-container {
+            margin-top: 15px;
+        }
+
+        .hint-container button {
+            background-color: #f0f0f0;
+            border: 1px solid #ddd;
+            padding: 10px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .hint-container button:active {
+            background-color: #ddd;
+        }
+
+        .note {
+            font-size: 12px;
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            width: 100%;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .note div {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Судоку з нотатками</h1>
+
+    <div class="controls">
+        <label for="difficulty">Рівень складності:</label>
+        <select id="difficulty">
+            <option value="easy">Легкий</option>
+            <option value="medium">Середній</option>
+            <option value="hard">Складний</option>
+        </select>
+        <button id="newGame">Нова гра</button>
+    </div>
+
+    <table id="sudoku-board"></table>
+
+    <div class="notes">
+        <h2>Нотатки</h2>
+        <label>
+            <input type="checkbox" id="toggleNotes"> Увімкнути нотатки
+        </label>
+        <div class="note-buttons">
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>4</button>
+            <button>5</button>
+            <button>6</button>
+            <button>7</button>
+            <button>8</button>
+            <button>9</button>
+            <button id="clearNote">Очистити нотатки</button>
+        </div>
+    </div>
+
+    <div class="score">Рахунок: <span id="score">0</span></div>
+
+    <div class="hint-container">
+        <button id="hint">Підказка</button>
+    </div>
+
+    <script>
+        const difficultySelect = document.getElementById('difficulty');
+        const newGameButton = document.getElementById('newGame');
+        const sudokuBoard = document.getElementById('sudoku-board');
+        const scoreDisplay = document.getElementById('score');
+        const noteButtons = document.querySelectorAll('.note-buttons button');
+        const clearNoteButton = document.getElementById('clearNote');
+        const hintButton = document.getElementById('hint');
+        const toggleNotes = document.getElementById('toggleNotes');
+
+        let board = [];
+        let notes = [];
+        let score = 0;
+        let notesEnabled = false;
+
+        // Вмикання/вимикання нотаток
+        toggleNotes.addEventListener('change', (event) => {
+            notesEnabled = event.target.checked;
+        });
+
+        // Функція для створення нової гри
+        function newGame() {
+            const difficulty = difficultySelect.value;
+            board = generateSolvedBoard();
+            removeNumbersByDifficulty(board, difficulty);
+
+            notes = [];
+            for (let i = 0; i < 9; i++) {
+                notes[i] = [];
+                for (let j = 0; j < 9; j++) {
+                    notes[i][j] = [];
+                }
+            }
+
+            renderBoard();
+            score = 0;
+            scoreDisplay.textContent = score;
+        }
+
+        function generateSolvedBoard() {
+            const board = Array.from({ length: 9 }, () => Array(9).fill(0));
+
+            function isSafe(board, row, col, num) {
+                for (let x = 0; x < 9; x++) {
+                    if (board[row][x] === num || board[x][col] === num) return false;
+                }
+
+                const startRow = row - row % 3;
+                const startCol = col - col % 3;
+                for (let i = 0; i < 3; i++) {
+                    for (let j = 0; j < 3; j++) {
+                        if (board[i + startRow][j + startCol] === num) return false;
+                    }
+                }
+                return true;
+            }
+
+            function solve(board) {
+                for (let row = 0; row < 9; row++) {
+                    for (let col = 0; col < 9; col++) {
+                        if (board[row][col] === 0) {
+                            for (let num = 1; num <= 9; num++) {
+                                if (isSafe(board, row, col, num)) {
+                                    board[row][col] = num;
+                                    if (solve(board)) {
+                                        return true;
+                                    }
+                                    board[row][col] = 0;
+                                }
+                            }
+                            return false;
+                        }
+                    }
+                }
+                return true;
+            }
+
+            solve(board);
+            return board;
+        }
+
+        function removeNumbersByDifficulty(board, difficulty) {
+            let cellsToRemove;
+            switch (difficulty) {
+                case 'easy':
+                    cellsToRemove = 30;
+                    break;
+                case 'medium':
+                    cellsToRemove = 40;
+                    break;
+                case 'hard':
+                    cellsToRemove = 50;
+                    break;
+                default:
+                    cellsToRemove = 30;
+            }
+
+            while (cellsToRemove > 0) {
+                const row = Math.floor(Math.random() * 9);
+                const col = Math.floor(Math.random() * 9);
+                if (board[row][col] !== 0) {
+                    board[row][col] = 0;
+                    cellsToRemove--;
+                }
+            }
+        }
+
+        function renderBoard() {
+            sudokuBoard.innerHTML = '';
+            for (let i = 0; i < 9; i++) {
+                const row = document.createElement('tr');
+                for (let j = 0; j < 9; j++) {
+                    const cell = document.createElement('td');
+                    cell.textContent = board[i][j] !== 0 ? board[i][j] : '';
+                    if (notes[i][j].length > 0) {
+                        const noteDiv = document.createElement('div');
+                        noteDiv.classList.add('note');
+                        notes[i][j].forEach(note => {
+                            const noteElem = document.createElement('div');
+                            noteElem.textContent = note;
+                            noteDiv.appendChild(noteElem);
+                        });
+                        cell.appendChild(noteDiv);
+                    }
+                    row.appendChild(cell);
+                }
+                sudokuBoard.appendChild(row);
+            }
+        }
+
+        noteButtons.forEach(button => {
+            button.addEventListener('click', event => {
+                const noteValue = event.target.textContent;
+                const selectedCell = document.querySelector('.selected');
+                if (!selectedCell) return;
+
+                const row = selectedCell.parentElement.rowIndex;
+                const col = selectedCell.cellIndex;
+
+                if (notesEnabled) {
+                    // Clear notes if already exists
+                    if (noteValue === 'Очистити нотатки') {
+                        notes[row][col] = [];
+                    } else {
+                        // Add small digits in the 3x3 cell area
+                        addNoteInArea(row, col, noteValue);
+                    }
+                } else {
+                    // Check for game over condition before placing the number
+                    if (board[row][col] === 0) {
+                        board[row][col] = noteValue;
+                        if (!isBoardValid()) {
+                            alert("Гра закінчилась! Ви помилилися!");
+                            newGame(); // Restart the game
+                        }
+                        notes[row][col] = [];
+                    }
+                }
+                renderBoard();
+            });
+        });
+
+        clearNoteButton.addEventListener('click', () => {
+            const selectedCell = document.querySelector('.selected');
+            if (!selectedCell) return;
+
+            const row = selectedCell.parentElement.rowIndex;
+            const col = selectedCell.cellIndex;
+
+            if (notesEnabled) {
+                notes[row][col] = [];
+                renderBoard();
+            }
+        });
+
+        function addNoteInArea(row, col, noteValue) {
+            const startRow = row - (row % 3);
+            const startCol = col - (col % 3);
+            const smallDigit = parseInt(noteValue);
+            for (let r = startRow; r < startRow + 3; r++) {
+                for (let c = startCol; c < startCol + 3; c++) {
+                    if (!notes[r][c].includes(smallDigit)) {
+                        notes[r][c].push(smallDigit);
+                    }
+                }
+            }
+        }
+
+        function isBoardValid() {
+            for (let i = 0; i < 9; i++) {
+                for (let j = 0; j < 9; j++) {
+                    const num = board[i][j];
+                    if (num !== 0) {
+                        // Check row and column
+                        for (let x = 0; x < 9; x++) {
+                            if (x !== j && board[i][x] === num) return false; // Row check
+                            if (x !== i && board[x][j] === num) return false; // Column check
+                        }
+                        // Check 3x3 grid
+                        const startRow = i - (i % 3);
+                        const startCol = j - (j % 3);
+                        for (let r = startRow; r < startRow + 3; r++) {
+                            for (let c = startCol; c < startCol + 3; c++) {
+                                if ((r !== i || c !== j) && board[r][c] === num) return false; // Grid check
+                            }
+                        }
+                    }
+                }
+            }
+            return true;
+        }
+
+        function removeInvalidNotes() {
+            for (let i = 0; i < 9; i++) {
+                for (let j = 0; j < 9; j++) {
+                    if (board[i][j] !== 0) {
+                        const num = board[i][j];
+                        for (let k = 0; k < 9; k++) {
+                            notes[i][k] = notes[i][k].filter(note => note !== num);
+                            notes[k][j] = notes[k][j].filter(note => note !== num);
+                        }
+
+                        const startRow = i - i % 3;
+                        const startCol = j - j % 3;
+                        for (let row = 0; row < 3; row++) {
+                            for (let col = 0; col < 3; col++) {
+                                notes[startRow + row][startCol + col] = notes[startRow + row][startCol + col].filter(note => note !== num);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        newGameButton.addEventListener('click', newGame);
+        sudokuBoard.addEventListener('click', event => {
+            sudokuBoard.querySelectorAll('td').forEach((cell, index) => {
+                cell.addEventListener('click', () => {
+                    const row = Math.floor(index / 9);
+                    const col = index % 9;
+                    highlightCells(row, col);
+                });
+            });
+        });
+
+        hintButton.addEventListener('click', () => {
+            const emptyCells = [];
+            for (let i = 0; i < 9; i++) {
+                for (let j = 0; j < 9; j++) {
+                    if (board[i][j] === 0) {
+                        emptyCells.push({ row: i, col: j });
+                    }
+                }
+            }
+
+            if (emptyCells.length > 0) {
+                const randomCell = emptyCells[Math.floor(Math.random() * emptyCells.length)];
+                const { row, col } = randomCell;
+                board[row][col] = generateSolvedBoard()[row][col];
+                removeInvalidNotes();
+                renderBoard();
+            }
+        });
+
+        function highlightCells(row, col) {
+            sudokuBoard.querySelectorAll('td').forEach(cell => cell.classList.remove('highlight', 'selected'));
+
+            for (let i = 0; i < 9; i++) {
+                sudokuBoard.rows[row].cells[i].classList.add('highlight');
+                sudokuBoard.rows[i].cells[col].classList.add('highlight');
+            }
+            const startRow = row - (row % 3);
+            const startCol = col - (col % 3);
+            for (let i = startRow; i < startRow + 3; i++) {
+                for (let j = startCol; j < startCol + 3; j++) {
+                    sudokuBoard.rows[i].cells[j].classList.add('highlight');
+                }
+            }
+            sudokuBoard.rows[row].cells[col].classList.add('selected');
+        }
+
+        newGame();
+    </script>
+</body>
+
+</html>

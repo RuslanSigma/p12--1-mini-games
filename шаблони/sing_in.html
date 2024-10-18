@@ -1,0 +1,71 @@
+@page "/signin"
+
+@code {
+    private string email;
+    private string password;
+    private string errorMessage;
+
+    private async Task HandleLogin()
+    {
+        // Виклик C# методу для перевірки логіну через ADO.NET
+        if (await CheckLoginAsync(email, password))
+        {
+            // Якщо логін успішний, перенаправляємо на головну сторінку
+            NavigationManager.NavigateTo("/dashboard");
+        }
+        else
+        {
+            // Якщо логін не вдалий, відображаємо повідомлення про помилку
+            errorMessage = "Invalid email or password.";
+        }
+    }
+
+    // Метод для перевірки користувача у базі даних
+    private async Task<bool> CheckLoginAsync(string email, string password)
+    {
+        // Логіка перевірки користувача з бази даних через ADO.NET
+        bool isValid = false;
+
+        try
+        {
+            using (var connection = new SqlConnection("YourConnectionString"))
+            {
+                await connection.OpenAsync();
+                string query = "SELECT COUNT(*) FROM Users WHERE Email = @Email AND Password = @Password";
+                using (var command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@Email", email);
+                    command.Parameters.AddWithValue("@Password", password); // Пароль можна хешувати для безпеки
+                    
+                    int count = (int)await command.ExecuteScalarAsync();
+                    isValid = count > 0;
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            errorMessage = $"Error connecting to database: {ex.Message}";
+        }
+
+        return isValid;
+    }
+}
+
+<div class="container">
+    <h1>Sign In</h1>
+    @if (!string.IsNullOrEmpty(errorMessage))
+    {
+        <div class="alert alert-danger">@errorMessage</div>
+    }
+    <hr>
+    <div>
+        <label>Email:</label>
+        <input type="text" @bind="email" class="form-control" placeholder="Enter email" />
+    </div>
+    <div>
+        <label>Password:</label>
+        <input type="password" @bind="password" class="form-control" placeholder="Enter password" />
+    </div>
+    <hr>
+    <button @onclick="HandleLogin" class="btn btn-primary">Sign In</button>
+</div>

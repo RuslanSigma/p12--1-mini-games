@@ -9,63 +9,119 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ігри
 build_property.RootNamespace = ігри
-build_property.ProjectDir = D:\python\дщд\ігри\ігри\
+build_property.ProjectDir = C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\python\дщд\ігри\ігри
+build_property.MSBuildProjectDirectory = C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/python/дщд/ігри/ігри/Pages/Error.cshtml]
+[C:/Users/ggg81/Downloads/Нова папка/Нова папка/репозиторий/ігри/ігри/Pages/a.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ggg81/Downloads/Нова папка/Нова папка/репозиторий/ігри/ігри/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/python/дщд/ігри/ігри/Pages/game1.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZ2FtZTEuY3NodG1s
+[C:/Users/ggg81/Downloads/Нова папка/Нова папка/репозиторий/ігри/ігри/Pages/game_windows/window_game1.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZ2FtZV93aW5kb3dzXHdpbmRvd19nYW1lMS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/python/дщд/ігри/ігри/Pages/game2.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZ2FtZTIuY3NodG1s
+[C:/Users/ggg81/Downloads/Нова папка/Нова папка/репозиторий/ігри/ігри/Pages/game_windows/window_game2.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZ2FtZV93aW5kb3dzXHdpbmRvd19nYW1lMi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/python/дщд/ігри/ігри/Pages/game3.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZ2FtZTMuY3NodG1s
+[C:/Users/ggg81/Downloads/Нова папка/Нова папка/репозиторий/ігри/ігри/Pages/game_windows/window_game3.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZ2FtZV93aW5kb3dzXHdpbmRvd19nYW1lMy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/python/дщд/ігри/ігри/Pages/game4.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZ2FtZTQuY3NodG1s
+[C:/Users/ggg81/Downloads/Нова папка/Нова папка/репозиторий/ігри/ігри/Pages/game_windows/window_game4.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZ2FtZV93aW5kb3dzXHdpbmRvd19nYW1lNC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/python/дщд/ігри/ігри/Pages/Index.cshtml]
+[C:/Users/ggg81/Downloads/Нова папка/Нова папка/репозиторий/ігри/ігри/Pages/game_windows/window_kwiz1.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZ2FtZV93aW5kb3dzXHdpbmRvd19rd2l6MS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ggg81/Downloads/Нова папка/Нова папка/репозиторий/ігри/ігри/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/python/дщд/ігри/ігри/Pages/kwiz1.cshtml]
+[C:/Users/ggg81/Downloads/Нова папка/Нова папка/репозиторий/ігри/ігри/Pages/kwiz1.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNca3dpejEuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/python/дщд/ігри/ігри/Pages/Privacy.cshtml]
+[C:/Users/ggg81/Downloads/Нова папка/Нова папка/репозиторий/ігри/ігри/Pages/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/python/дщд/ігри/ігри/Pages/Shared/Index.cshtml]
+[C:/Users/ggg81/Downloads/Нова папка/Нова папка/репозиторий/ігри/ігри/Pages/Shared/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/python/дщд/ігри/ігри/Pages/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/ggg81/Downloads/Нова папка/Нова папка/репозиторий/ігри/ігри/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/python/дщд/ігри/ігри/Pages/_ViewImports.cshtml]
+[C:/Users/ggg81/Downloads/Нова папка/Нова папка/репозиторий/ігри/ігри/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/python/дщд/ігри/ігри/Pages/_ViewStart.cshtml]
+[C:/Users/ggg81/Downloads/Нова папка/Нова папка/репозиторий/ігри/ігри/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/python/дщд/ігри/ігри/Pages/Shared/Main.cshtml]
+[C:/Users/ggg81/Downloads/Нова папка/Нова папка/репозиторий/ігри/ігри/Pages/Achievments.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNoaWV2bWVudHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-idqmzx2whz
+
+[C:/Users/ggg81/Downloads/Нова папка/Нова папка/репозиторий/ігри/ігри/Pages/game1.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZ2FtZTEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-ydt8i9l4ot
+
+[C:/Users/ggg81/Downloads/Нова папка/Нова папка/репозиторий/ігри/ігри/Pages/game2.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZ2FtZTIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-b11r59os1r
+
+[C:/Users/ggg81/Downloads/Нова папка/Нова папка/репозиторий/ігри/ігри/Pages/game3.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZ2FtZTMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-fkpadfdi9i
+
+[C:/Users/ggg81/Downloads/Нова папка/Нова папка/репозиторий/ігри/ігри/Pages/game4.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZ2FtZTQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-yi06wppcht
+
+[C:/Users/ggg81/Downloads/Нова папка/Нова папка/репозиторий/ігри/ігри/Pages/game5.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZ2FtZTUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-ybv9dljqwz
+
+[C:/Users/ggg81/Downloads/Нова папка/Нова папка/репозиторий/ігри/ігри/Pages/games.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZ2FtZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-8kkclxwwdu
+
+[C:/Users/ggg81/Downloads/Нова папка/Нова папка/репозиторий/ігри/ігри/Pages/kwiz2.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNca3dpejIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-hhyseo45k4
+
+[C:/Users/ggg81/Downloads/Нова папка/Нова папка/репозиторий/ігри/ігри/Pages/kwizes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNca3dpemVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = b-foau5aqmor
+
+[C:/Users/ggg81/Downloads/Нова папка/Нова папка/репозиторий/ігри/ігри/Pages/Popular.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9wdWxhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = b-nt49gbispw
+
+[C:/Users/ggg81/Downloads/Нова папка/Нова папка/репозиторий/ігри/ігри/Pages/Shared/Main.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXE1haW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-14ppekyo5g
+
+[C:/Users/ggg81/Downloads/Нова папка/Нова папка/репозиторий/ігри/ігри/Pages/User_opportunities/Regist.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlcl9vcHBvcnR1bml0aWVzXFJlZ2lzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = b-jt9byo7dqa
+
+[C:/Users/ggg81/Downloads/Нова папка/Нова папка/репозиторий/ігри/ігри/Pages/User_opportunities/Sign_in.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlcl9vcHBvcnR1bml0aWVzXFNpZ25faW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-b0la5zeg0v

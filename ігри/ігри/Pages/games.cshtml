@@ -1,0 +1,31 @@
+﻿@page
+@model ігри.Pages.gamesModel
+@{
+}
+<h2>Ігри</h2>
+
+<div class="content">
+    <a asp-area="" asp-page="/game1" onclick="hideOtherElements(this)" target="_self"
+       class="anime-card">
+        <img src="https://th.bing.com/th/id/OIP.c8xIlFZ3atuGcSZXcBxr3wHaHa?w=169&h=180&c=7&r=0&o=5&pid=1.7"
+             alt="2048">
+        <h3>2048</h3>
+    </a>
+    <a asp-area="" asp-page="/game2" onclick="hideOtherElements(this)" target="_self"
+       class="anime-card">
+        <img src="https://th.bing.com/th?id=ODL.b74f1780654f8e7109a0cb498cb9b663&w=298&h=283&c=10&rs=1&qlt=99&o=6&cb=13&pid=13.1"
+             alt="Камінь ножниці папір">
+        <h3>Камінь, Ножниці, Папір</h3>
+    </a>
+    <a asp-area="" asp-page="/game3" onclick="hideOtherElements(this)" target="_self"
+       class="anime-card">
+        <img src="https://th.bing.com/th/id/OIP.wA1Vj6HKfKTcbxwWGR-0EgHaHK?w=181&h=180&c=7&r=0&o=5&pid=1.7"
+             alt="Тік Так Тоу">
+        <h3>Хрестики нулики</h3>
+    </a>
+    <a asp-area="" asp-page="/game4" onclick="hideOtherElements(this)" target="_self"
+       class="anime-card">
+        <img src="https://th.bing.com/th/id/OIP.wA1Vj6HKfKTcbxwWGR-0EgHaHK?w=181&h=180&c=7&r=0&o=5&pid=1.7"
+             alt="Сапер">
+        <h3>Сапер</h3>
+    </a>

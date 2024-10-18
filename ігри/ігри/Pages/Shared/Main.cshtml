@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/ігри.styles.css" asp-append-version="true" />
-     <style>
+    <style>
         body {
             font-family: sans-serif;
             margin: 0;
@@ -22,15 +22,14 @@
             0% {
                 background-position: 0% 50%;
             }
-
             50% {
                 background-position: 100% 50%;
             }
-
             100% {
                 background-position: 0% 50%;
             }
         }
+
         .head {
             font-size: 3em;
             font-weight: bold;
@@ -39,22 +38,34 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             animation: gradientAnimation 15s ease infinite;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            padding: 10px;
+            z-index: 1000;
+            padding-bottom: 50px;
+            justify-content: center;
         }
 
         header {
-            padding: 20px 0;
+            padding: 20px;
             text-align: center;
         }
 
         .container {
             display: flex;
+            min-width:1200px;
+            height: auto;
             margin: 20px auto;
-            width: 85%;
-            max-width: 1200px;
+            width: 90%;
+            max-width: 1400px;
             background-color: #2c2f33;
             border-radius: 10px;
             padding: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-top: 100px;
         }
 
         .sidebar {
@@ -73,7 +84,6 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
-            border-radius: 1px black;
         }
 
         .content2 {
@@ -87,6 +97,7 @@
         h1 {
             font-size: 2.5em;
             margin-bottom: 20px;
+            align-self: center;
         }
 
         h2 {
@@ -106,6 +117,7 @@
             position: relative;
             transition: transform 0.3s ease;
             overflow: hidden;
+            justify-content: center;
         }
 
         .anime-card:hover {
@@ -147,8 +159,8 @@
         }
 
         .centered-heading {
-            text-align: center; 
-            margin-top: 20px; 
+            text-align: center;
+            margin-top: 20px;
             margin-bottom: 20px;
             color: #fff;
         }
@@ -174,74 +186,115 @@
         .sidebar a:hover {
             text-decoration: underline;
         }
+
+        .centered-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 5px;
+        }
+
+        .rounded-button {
+            background-color: #3498db;
+            border: none;
+            color: white;
+            padding: 15px 30px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            border-radius: 25px;
+            transition: background-color 0.3s;
+            cursor: pointer;
+        }
+
+        .rounded-button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        .rounded-button:active {
+            background-color: #004080;
+            transform: scale(0.95);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        h2 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .buttons-container {
+            display: flex;
+            gap: 20px;
+        }
+
+        .auth-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 120px;
+            text-align: center;
+        }
+
+        .auth-btn:hover {
+            background-color: #45a049;
+        }
+
+        @@media screen and (max-width: 600px) {
+            .auth-btn {
+                width: 100px;
+                padding: 12px 16px;
+            }
+        }
     </style>
 </head>
 <body>
+    <a asp-area="" asp-page="/Main_page" id="autoLink" target="_top"></a>
     <header>
         <h1 class="head">Грати та розважатись</h1>
     </header>
-
     <div class="container">
         <div class="sidebar">
             <h2>Навігація по сайту</h2>
+            <div class="buttons-container">
+                <a class="auth-btn" asp-page="/User_opportunities/Regist">Register</a>
+                <a class="auth-btn" asp-page="/User_opportunities/Sign_in">Sign In</a>
+            </div>
             <ul>
-                <li><a href="#">Ігри</a></li>
-                <li><a href="#">Квізи</a></li>
-                <li><a href="#">Тести</a></li>
-                <li><a href="#">Досягнення</a></li>
-
+                <li><a asp-area="" asp-page="/Popular" id="Popular">Популярне</a></li>
+                <li><a asp-area="" asp-page="/games" id="games">Ігри</a></li> 
+                <li><a asp-area="" asp-page="/kwizes" id="kwizes">Квізи</a></li>
+                <li><a asp-area="" asp-page="/Achievments" id="Achievments">Досягнення</a></li>
             </ul>
         </div>
-
         <div class="content2">
-            <h2>Популярні розваги</h2>
-
-            <div class="content">
-                <a a c asp-area="" asp-page="/game1" target="_blank"
-                   class="anime-card">
-                    <img src="https://th.bing.com/th/id/OIP.c8xIlFZ3atuGcSZXcBxr3wHaHa?w=169&h=180&c=7&r=0&o=5&pid=1.7"
-                         alt="2048">
-                    <h3>2048</h3>
-                </a>
-                <a a c asp-area="" asp-page="/game2" target="_blank"
-                class="anime-card">
-                    <img src="https://th.bing.com/th?id=ODL.b74f1780654f8e7109a0cb498cb9b663&w=298&h=283&c=10&rs=1&qlt=99&o=6&cb=13&pid=13.1"
-                         alt="Камінь ножниці папір">
-                    <h3>Камінь, Ножниці, Папір</h3>
-                </a>
-                <a a c asp-area="" asp-page="/game3" target="_blank"
-                   class="anime-card">
-                    <img src="https://th.bing.com/th/id/OIP.wA1Vj6HKfKTcbxwWGR-0EgHaHK?w=181&h=180&c=7&r=0&o=5&pid=1.7"
-                         alt="Тік Так Тоу">
-                    <h3>Хрестики нулики</h3>
-                </a>
-                <a a c asp-area="" asp-page="/kwiz1" target="_blank"
-                class="anime-card">
-                    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAsJCQcJCQcJCQkJCwkJCQkJCQsJCwsMCwsLDA0QDBEODQ4MEhkSJRodJR0ZHxwpKRYlNzU2GioyPi0pMBk7IRP/2wBDAQcICAsJCxULCxUsHRkdLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCz/wAARCABsAL4DASIAAhEBAxEB/8QAGwAAAgIDAQAAAAAAAAAAAAAABQYDBAECBwD/xABNEAACAgEDAgMFBAUFDQYHAAABAgMEEQAFEiExBhNBFCJRYXEVMoGhI1KRscEkM0KToxYlQ2JjcnOSorKzwvA0RYKDlOE1U1W0w9Lx/8QAGgEAAgMBAQAAAAAAAAAAAAAAAAMCBAUBBv/EACoRAAICAQMEAQMEAwAAAAAAAAABAgMRBBIhEyIxQQUkUWEUMjM0Q3HB/9oADAMBAAIRAxEAPwDqkViGRmizxmjB5wuR5gUHjz4g54n0PY6mBB1z2ru1+qr8kkssJIJohOsjmN0OSEOC2W7Dr076f4SWRGKlSyIxU91JGSD89TnBw8iarVYso35DJXJz/wBDVO1JLWieT+TCFOHJp5vLUFjx5Mze6AOhPXJ6+vQ59gg9ubcPMs+c0CwFPaJjBxVuWRCW8vP/AIfn366nnjikVfMRW4OskfJQeMi9mXPYj0OoDik24pGIlVq00ssTTxRw2YhJZQZw1dHPXPp7wHz1JXntsrGeCOFwRhY5jOjLjvyKIc+hHH6E6ijp0YvPKVoQbE4szHiDymGCr9fUYyPh+Op8/v0AS+c2SMrkYyB3GexI0L3n7SepxpRPLzZlnigkWKV4mQr7jN6A4LAMM/HoQ08MPl3L8/pYWmB0GMRRshwQSfX1A/HuZJoYrMLwSgtFJhZFVmXzEByY2K4PE9mHqOnY4IjjWUIxXemSxxrTpDarxJIsMlXgasw8iJR+kxxOOKfHHTOOrTsku8tFYG5RSoUMKVzZKNM+IwJCzJ8SM/iQOgAFsbZVEiTCFi6zSWAzF2BmdRGJCOxKj3Y/1R0GNW+D/Bv9U402dm5eBUKtjzk281vlqOW7FDkytxAQyMeLlVQEKWYqCB31lhxBLEKPi5Cj9rY0LvzeHZ0eG5uNBOSBCTerxOo5B8DL/ED00peRj/BPFv22z2UrRSlpJDxRjGwjdsZ4qzdc/hoh5rEenyxpXr/3FUpUtLvNFnjzw57hDKqlsjIWLpnqcfXV9fEPh1iVTcI5DnoIIbMvz/wcZ1OW1PtIV78dxchrSRXLNs2HZZu0RBwp+uevqB06autYCKzO0aIqs7u5CoqqMlmY9AB66FfbO2nIRN1kwM5h2bd5Afowr8fz1g7t90w7Vv0nXpjbzFn5/wApdMfjpUYqKwh8pOXLLNXeqduVoYPNZ1YZ9xMcfe9/3XJ49AM4/pD49CaMHGRpegYRENW8L7rEytzVidrj6lShOfbCexI7asLe8QDPl+H3x6efuVJf+Hz1IiW92q2rdK1XrOiSSqgBc4BUMCVJwe/00tVfDm+17NWZGpp5Myvy8x2wvZvdCDuMjGdHxa8SuMjaNuQ/5bdZOn9VUbWvmeLXPSHY4hj/AOfdn/8Awx6ZGxxWEJnTGbywi/IKwXAchmTl1HLPTOPnoO9+WSwHShLOtIT1p3jljHKQlRKKyuMtgrgksmeo6kY1rM+9x3Npg3I7XYr3Z7MRWpWtRSxvFWeyhEsk7DrxKkcB3/DS1fp77YsWY5qO4+Qly3JXhrKfZQk0jFWArt1JXGeXYswwOXWrOE5vEWkMc1WstZHDat2obgriC5BYkA5EQJKihc4yvmjJA6ZP7u2iykEAjOuaw0t6gkrvBt24RyROphKVyvEgcRjJ4j4dcD6dx0So1h61VrMax2GhjadEPJUkIBYA/XVqdah4eRVNkpruWAa247sekfh3cR857W0ov9nZc/lrAteJyfd2Smq/5bduP7RFVf8Afoz6a1LYx076XkdhIFNJ4sYDy6ezRfHzL1yXH041l1qE8Xuffl2JF9AIL8pB/GVBq/Zv0KgLWrNeEDv5sqqcfTv+Wh/91XhPmE+2aAYnj1lwAfmSMfnruG/QZRlqnihv+9tsT/RbPISPxkun92vHa97cgvv9hPlWobcg/to5D+eiUFurZj86tNDPCSQJa8qSxkj05ISNT64dBA2m8QRJv+8sP8UbZD/wKqnWg2Fe77rv79c//E5k/KELq5uO7bZtSwvenMSzOI4gsU8zu57BUgRm/LQ8eK9jeSOKFdyleRgiiPa9wwWPpl4gNRcorhsmq5NZS4J28P7ZJ/OtuUn+k3Xc+v1Czga1Hhrw5jD7eko+FiSef/jO2iFK5Xv1a1yuWMNmNZYiysrcW7clbqD8RoXu/iGLarVeoKNq1NPHJIogeuihYwpbk0zr8R+3Q5KKywhCU3tisssJ4d8LIQV2PaAR2PsNYt+0pn89Wk23aY8eXQpJ/mVoV/cul0eLL7Cwy7EwWCtYtP5m41uRSBPMYBY1brjTQJk4LI2FQoHJJ6BSM5J1yNkZLMWdsqnW9s1hmypFGMIqKPgqhf3a20q1vEW6Xa1S1HW2eCOzBHOqy3dwlkTmAwV1jpKuR64Y/wAdTR7jv08scUdzZg8h4oq0NymGevdjOgx88aj1YZxlCxl1gFfTGqW1XJNw2rabsiIstyhUsyrHngsksSuyryycAnp10oX9+3qrYsfyuRUN3coIoq8FNBFHVsGFAXmjkYkjDE9O/bT4xcnhE4Qc3tiPmV+WvdPlrmcniTeXzi9fHy82ioH9XTB/PUD71uT45WL/AHz13G4hP/p2jH5ad+msLC0drOp/h+WvZH/Q1yj7TuyEI0k7hiFIlu7pL39B5lkj8tO3g21YueHdmmsOXlWAwOx+8fJJiBbPXOB1J/jqFlUq/Iu3Tyq/cW94YpY8MPgHG9xoT8BJTtJ/EasW7RrQSyrA8sg6RxIJCXkI90ExI7AfE8TjVbflHl7PKe0O+bQ39ZP7P/z6nsQCxGYjLYiBZWLVppIZMj05xkHHxGlCChU3q5Ylh87bgkMjFBJWnsWnRjx4841qqADnuXHY98aPpnivp0/joNU2qlSaJqpsJwDBlEz8JeRJ5TIuAxHZSc4AAHbRlewz3x1+ugDxzg6U/E2/Wakke17aV9vlTnLIxIFaHpl2wQfUdAQSSACOpDZ3H1xrlMkptbjvtx88pdwmgQnriKueKgfLJY//AM0+iCnLkramx1wyiGPb0mlVpVlv25GHFrA892duv6OMDiPXGFH11bkpPByjlrwRsv3ow1VpF/z4o2Lj/V0R2iuLUteoDIgvT2xbkhZo5Bt9KKF3hjkU8h5jyoGIIOAQCCchtOx7F7P7KNr24VsfzQqwhB07jC5z8++nzuUJYSKtendkd0mc6ii9kn9povJStDJ86nxjLY64mTBjde2Qyn8O4fdg3pt1imisBI9wp8Bajiz5Lo+fLnh5Eni2D0ycEEZOAzpFiD2LcN327LMlG0scDOSWavLCk8XIsckqG4Z9ePx6khskpr7nt8oyAbK0JD+tFcjkYAj5PHGR9T8dF0IyhvRyiycLem2FvGgPlbJKCR5e51AcEj70qJ6fXQ2k3G9tzegt1QfoZFGinjTptlWT0ivU5D9FnibQeI8J4G/UsRH6YkHXXkta9lyZ7341btJJf7/6NXhsFdmoIe8LWq5+Xk2ZY8floD4rBG8bE/o0NuP6kxs3/Lo/sJxTtp1xHvO/oM+gG52SB+egnjAfy3w4/wALMif60Fhf4609V/CzG0D+oiUIF5G3H1zLt+5xD/xVJT/DTjQxY2rbySR5+3VST6gPAvXSrtoDX6SntI8kR+kkTx/x0zbBIJdi8PyAEB9ronB7j9CowdVfjcOpp/ct/NLF6f4FD2GLa923OhBJYatHU2+WFbEskvEs06uUDk4B6dBgdNTTV69iFBYUPGm57CXjfBjkSTcoIHSRT3Uhuo1PvI4+JbH+V2euw/8ALsMP+bUMrBKu4Oc4hSna6fGvuFWYH8tJx9UsmKPEUMNeCKCCOOKKGNI4o4lCpGijiFRV6YHYDS1uXhGDcrDz/au6Vleaadoa/soQPLx5lDJEWGcD1Omn4/jrSWWKGOSWV1SKNHkkkkYLHGiDkzuzdAAOpOtxNp5QKTi8oSbXg3YKFea3c3bf2hhClgLMfJmZgiRokMIYsxIVAMklgPXSzPSq0TJFif215C88clyWzHRjAwtTLEq0g7ysOnLKjovU9vO8PPLFby6OuZNorOGRqsUi+Wdwso2CJpASIVPVFOThpCFVyLMs1ajSQyXrTBIl+8I1Jx50mfyz3OSegOr9CljfN8GlplLHUm+DeCrd3S5HtdDImkGbk2TwrQEDOSOoYj9mR6sNdW2nbKu00q1GsCIYFIGRgsxOWYgdOp66p+Hthr7JTESESWZSJLdhurSy5JPU9cDJx9SfXoc1Wusc2Vb7nZL8AXxOsrbRN5ZIdbmzyIVcxspTca7cg4ViMY78Tj4HVCdfEVZXlnsWIa0PvPK93aJlIzj3/aaaEen+E0S8TchsW9MoJMVR7Ax1OYWWXoPj01BuO4RTx0aq178ctnddsQrPRtInBLccsnKYp5P3VYj3+uPnpJWB1fe780rrHZqOsZ4lfZqFmViOmf73bqx/sdGNq3OzffcVmi4LUligVxDag5SNGJHUx2UD5XK9sjr36as346rVLck1evKI69iXjLFG6krGzdQw0O8LtD9jwSRqmJJ7eRAyMnuTNCuCpx2UY0AMHp9P4a5R5Zgt73XOeUG8bkpz8JJfaFP0wwxrq57HSL4qoNTuHeB0p3FhgvsfuwWY8Rwzuc9FcYRj2BVfRiRY081GfJV1Ve+BHsE6xbptaMQDId1rpk4y1iCvMuP6hv2/PRaz4vpVtyuUJKlloKjRpPbgCyLGzDOGhH6QjuTxDdMdOvRRdWYKA7pLHIksUsZxJBNGco6H4g9un1ByRqGX7YnsmxLbrs8kivbKViptFVWPm6BuAcqqglcdu3TGn2Ubp7vTKdWp217faLV+5V3Dfd+uVJYpq0i7dHHLC4dHMcLFiCPqo1c2xS09Ujud52VEyM5KmewwB+IVCfx0PHBWfiArSEyPgAFyfU49fidEdp3Laad+gu4SNVr11nlgmmB9msbjaHkFpJl91AiAqgbGfMbr06ztjsq2ojTLqXbmMPjCJ5dgvsoyYB5xAI7J7x/cNLvIN76no3vqQPj1HTT5NFBcryxMFkhmjKHBBDKw9D2OufSVp9nlTbrx4qh8uhbfCwW4QPdUSH3RKoGGU4JxkZB9zynyNE54lH0e5+I1EIp0yfkbdisRu+8wKy8huM11EH3jXuKk6yY+HIup+akemhHi2xFLc2OojKbKWlsOinJSGMMzM2PTsPqwHr0FTVo5GjaSFuacvLdWkikQN94LJGVcZ9RnXq1CODzPZarcnA811Eju+OxklclvplsD5aVPXqyvZh5HU/GdC7qOSwi9toH2hQJOAk3msc4CrGpkZj8sDTJ4cV02DYFYYP2dVbHwDIHA/YRpbpVJNxM1Kq6usymtulyEh4KlRv52tBMMq1iQe43EngCSTywrvMaBEVFVUVAERVACqoAAAA9NXtBTKmvu9mX8pqI33dnhcCdv4C+INvPrNtFsH/y54MfvOq0wLUt8Vc5Oz3yPqgWUH/ZOq247jUk33cpL+4pA+3SyUqVWaStGq15YK0rPxCCUktnqWPw9NYG77GBMrWo5klgnryRxpcPmRzRtEyh4YiR37jVS3+wpJGYdFLe6WXrkBh0+PXSXv+7rMzqSTRqWZYoYDkDcL9aTg8kykZ9ngYEY/puv6qZlL+HZBJX3Hy5b8tVL+KUm4i55jQGvXf8ARm4olKhiwBI9DpP3uDcRaaFNp3aVkt7w/mV6UkkTpYvzWo2WRTxxh/iNb1KUpcjqIxlYlPwB7Niciewyy2rDMzsB7zyO3dmJI6fH9g+Rvw1PtmzRzWLUE0+6WMmaV7G2IsYPTy4+Nhjjtn6AY6e8MXbfEL/c8P7wfhzjqxj/AG5s6mTY/F0n3dgnA+E96lH+4tq/N1y4zwatzqs43YSGtvGKjPCjF3/p30wfqYonGiGyeIYd4nv1hEkU9MQOypI8qvHNGGDBnjQ5ByCOPpn10lL4Y8ZP/wB104/9JuaEf2cJ0f8ACuw75tW4bjc3EUVS1VghRKk0srBomJ9/zI1HY+h9NVZwrS7WULIUqPY8sYd+VZNl8QIwBV9p3FSD65gfp16aA/YtyB9kv0IqVmYWUsOxq1aAWN6U6BpZKoyVBZTgRknA7dwy7igmpbjDj+dpWo+vb3omHXS7t3iJ/Ydt5xUFRaVUM89y3VJIiXJX2ukkf9rquUzN6LxZUo7yZJ49zF2nZrrHVrNBLWsTRmKKSCMu48oZUOvIkceeT1DTbVW3KruFyoZGSusHtdotPDa53LMmE8srWhcYVCWyMe8vwOrNbxJTskiKu8nHoWrXtmsKT/iiK2X/ANjW21TCa/4ik4WIXebb2VLURjbyRWCKykEggkP+z59QA56a0kijlVkkVXR1ZHR1DK6MMFWVuhB9dbZAHUjtrOQdACtP4UrKzewTpFGTgV7kUliGMfqxSRSxzqvwHmkDsAAMagHhm70HDZRjux+1nH9WLS/72m/8PyOvdMEnAHrnpqasl9xfShnOBZPhiSWF4pty8lQQ8Ue10q1WBJAPvyiQSyv8CGlwR8+oD/Yu81pJarwNI9xTt8N+kM14YrJ4WLEis/moyx8ggww5MByOneW7t0IJmt1Yx6mWaJP946ptv/hdSQ297OrevK/UB/39G+WMZOOqDaePBerwxQRRwwoI4oUSGJFGFSONQiqvyAAA16atXsRvDPHHLDIOMkUqK8bjvhlYEaGnxJ4aXou5V3z29n5zZPy8lW1lfEGzvkRvdkP+S2zc3/YVh1AauCP+5bw0DmOk0I/Vq2bdeP8ABIZFX8tbL4a8OBgXoibHQC5NYtL/AKth2X8tZO+1/wCht++v1A93arqZz/pkXprJ3a2TiPYt7f58Nvj/APuLSHUNkVykTdk2sNhOOKKJUSJFREUIiIqqiqPRVXoBqTQd9z3g58vYLoPws3Nsi/b5M0mtFv8AiViP7y01Hr5u7jIH0jrNqZAI/Z+3cmc1oCzsWZiilmPxJ76lWtVT7sMQ+iKP4aFGz4qbPGpssf8An3bsh/YtZf36wH8WEf8AaNjjPrivemx+DTR6jtj9gDPAYx6Dt26dMdNe4KM/ProDPJv8EL2LW9bbDBGF8xodonyMsEGOVuQ9yP6Oopvb4va3n8T2o1qCJrPk7bSCxiXHHBeCTOfkTqQDHgdOv8dZ4jS3KnH2pbHiXdyakMc1ngKcRSOQEq38npjOR8M6nXakIVm3TfJFYZBO5SoCDg5/RKugA7g/A/XSXuW97xt+9FEnkkSIyvLtjQRrFJREYdJ607IJDKffGOTdUxgDqSsmyUmWTjJuEknBjF7Vu+8SRebg8eY9o+7nGcDtpHkpWKW47J7VVlinrLE1yxYt+0TyPYd4YXXy2ccOaswyw6H7q9iubwhtUFJ4Z1BJ68sMFhZIzBYRJIpC2FkjkAZSOWD1B/PQPwnude5tO11FMosU9vpxSrKuC6KnlCeJgSrIxU9QenYgHppLG2bfT3GSaWpWatd5JymiVxHaaQusbl8hQSW4nHXopwVBkYdsZ626VjXr+Y67VuixQIUi5iOSs6xhmwo6k6XG9Skkh0tM4Rcmxwnp07S8bNeCdT3E8UcgP1DqdYrUaFMOtStXrrIQzitFHCGIHEEiMD06aoHzIEoTVrFq855RpEbdcLZSWQO8zMQFPljqOPp0x11einkkaeN42iaKRggaSItLF/RmUISQp6jqAcg6sFQExUKt2BbCeIN2s12BInr7hHHH7v3veqIi9PXQ+Pb7V1BYpTW0qOM1pN03bfJZbMZxiXya9mNEUjqmSSQRkLnAP2kexWuwBuLT17EKkniA0kbICSProHHvNyGDmKdY1Km2UJZw08laavIGmryxszoyHi0bJxGGBwMHllQD1fatnknkqXtvK21j89Cb24WK9mHkEMkLTSA5UkB1K5HIdwwYzweGPDsc8tiahVtSOeKe1QRyRwQhsrFDEwKD4s2CzHqT6LvDPJev7e/keU9CpNJfQsHNezcji402kX3S6gM0gHbCfrDN2ee7DIoi2+SzBwy7w2YFlD/qiKfiD6f4T10ASQ7PsMR5Q7XtsbEd4qdZD/spq2sMMQ/RxxIB2Coqj8hqpWsPOnIwWYGBw0dtFjcYAOQUZkI69wx1PyPXPUYIIPUEHQBKJYznjKh4jk2HU4X4nB14TQnGJU6Ak4kU4A9T1/6zqCLb9qVHEdCmizR+VKEgiUSR5zwcBeo+R1Xno1USRKlPbo3kASUyVVZHiLAsjLGUPXA7nHTsdAF/zYeQAkjYscAB1J+PQZ1ISAM9P26DS7fEjQybfV2mGZX5eZNS5EDHeNoWQhvx/wDeQjejGgE+3edmQyMa1oxlTjhxX2gEEdeXvH8PUAuM3IsfnoFuW+S1J7UESVY0q+zpJZuvOwMs8YmCRV665IAIyTKv0PobHYZ7+uO2gu57F4dtTvuO5KvFBG0xs2WSrlVEKM6OwjBxgZ6E9sntrjz6Jw2uXd4BaeKba4fjQtoMjhBHPWdsd/LlkmlTPwyAPmO4Ya9qPdaVe1RneKOZlcF4YzKnBiskMkcoIDAgq3wx0+JTdyg2NTNe2+vFSpLBFDFY8v2aK9KJGeSdYyASiDCiQj3i2BkDJMeCI5jQ3CZ1dIbm6WLVdXGCIyiIfd9M4BP1+I0lTaltZfuoq6CuryufYclg3JnkeLdJIlLEqgqVXCD9UM68j+J1WjoX491e41kGItYckSzmSSORFWOsYm/QqkZyykdT06DLGS3Hu+0PuU20x2ImuQxo8iAr05EjhnP3vUj+IwB/iPxDFs8aV6qJPu1kEVq+R7mR/OzH0Ve5/wDfDWo1ylJRS5Zl7kuQyGwWUN7yHBUN90nrgj0PqBrOuf8Ah5t8h3KnaexNZj3exIlqE45TlVIe1XVu0URwHYnr0AJZuLO77htUTvHJfopJGeLq9mFWVvgwLZzqVtfTk45yEZblks6XfE+zveqy3KjMtypEJnRWmxchqeZYSFkjYAsGPJMg9yOzdC/2ps3/ANS27/1cH/7699qbMMf3y24dRj+Vwd8/JtKayiaeHlCsDDPHyHGSGeNWGcMkkb4cH4EHpq9sw5b3WGTyj2vcJM+uHmrIDn8ND5/Zo9ztxbfPVl29oIbTRwyCQ17E7SFlhKEqEbBbie2emAeKkNmUnd5Xz0XZ+IA/x7gJ+foNZ8I7bcGrbPfS5DC+2wL5MlSKpBZhLCKU1VbjFLKJZo1CFSA/c4Pfr1I6zRVSJ57MpieZ8xRSRxcHjrA8lhLFiT1ySenU9hjWySFSAckHVga0DJBVWrPC001i3JZszYDsf0deNV5EJXrglVUZPqzH1Y4HEFJuM8c28bVWWP2yxvE0FV0sQeZVa0EkNiaq+JfcBaRCFYEAEkZ91u4ISwKjpn66CUqsJ37eXJYivFXsQqePFJdxXE7ZxyOfKQDJOOvx6AEzex7PSj4QyCnWZBKwJZo4mPv2pSfebr70p6nqWOcdb2PT19R8NTmGIggqCCGBDdQwIwQwPTB0K2HBq2K5yYqW4bnRrgkkrXq2DFEhYnJ4rhcn4DQBewdeAJAOCQSBnBxnQPxXu9zZIqD00rk2JZkfz0LjCIGGMEaX9s8T7puFm41iGnyo7Nud6Bo45ExLHHgBgHwV69saAOiJkKBhs5J7fHVSK1Tuea9SxBYCNwc1pUmCOBnixjJAOkbY9ye2ntElausse57NTQxtZCiK5I8cmVMpGcdummPaNtqTx347JmmWvabaoeUhjKVdu5xQrmDgc4dsn1z8ugAZwehIOCcZIPf4ajeWCN4I5JokedzHArsA0rheZCA9TgZJ+AGpko00mNhY2EpiSAkySkeWmABxZivp3xnVGpI824eIY5CClKzUgrjA9xJKcVhxnv1LHP0Hw0AbpbhcVspZiazJJFClivNG5ZM/fGCFzjK8iM+mqu/Mke2l3MI8u/tEwWxKkIkMN6Gbyw8o48jxPEY6npqba8zRboJS0gO77rB75J/RCVkEYz6AdANDPFRbathrvVLF6dza44WnZ5GIDiIF2Y8icHuT89B2PkWNkqfb29M+6xSSxQUDMomsiVmsCcKHcKc4wcA/L8NdGSuUgaKsY4eMTRQHgGSI8cK3lggEA9cZ6/jrmPgvcr1/xNXSzKzrDtdpUBZyPeYMc8mPw11kAddKgvaLesnJz2s5Rc2WSmZQnOvfpt7VYflzm5lgPbYpcAvC5GD24/dIBUE52/b57U/tVoPct7g78ELmOTcJI297DjJjqxZ/SPg98Dk76ffEcEQ2q/eAIt7bWs3acoxySRIyShz0KOBxdSMEH5ZFfwnHFY2utusiJ7ZuMYad1ACpFE7xxV4V7LEgGFUfM9SxLaUdZJV4S5+5ndJZyXts2paSPK7rLdsLEtmcJ5ahI88IK8XZIU6iNQfUkksxZrToAxyF6nvxHX8dWgAAAPTWkmAjtgEqrMMjPUAnVIaU3aKNHkkMSRxoZJHkKIiIvdmZsAD8dVa+57HamSvV3LbLE8nLhDXtVpZHCjkeKRsT0HU6TfC3jDft48RjbLnsnsvkXnxFAEfMLAL72Tqn4i8c+JNs3vddvrex+zVZ1iiElfm3EqD1YtoAP37NO1u9w1p4Jlhp0YJWryI6rMHnLI3AkAjpkal2jpvKdf57aLCKPUtDahkI/AN+elrYt2vb2+7Xrpi84PTrgQpwQRxxNgBfxOpd73S5sq7ZuFPyvaVns1QZk5r5c8KMw45H6oxqj/mNRr6c6JDNWsNKIJoZjBKYZxDIjmKVcFo5OJ6MPUHV8a5fH418RHwrY3cmp7Ym/ptykQDy/IMXM5XPf5505+Et0u7z4e2ncrpjNmytky+UnBP0dmWIYX6AavGWf//Z"
-                         alt="Мастера меча онлайн">
-                    <h3>Математичний квіз</h3>
-                </a>
-                <a a c asp-area="" asp-page="/game4" target="_blank"
-                class="anime-card">
-                    <img src="https://th.bing.com/th/id/OIP.ZoCa3B1wNFkkH8npqVxW0QHaHa?w=166&h=180&c=7&r=0&o=5&pid=1.7" alt="Сапер">
-                    <h3>Сапер</h3>
-                </a>
-                <a href="#" class="anime-card">
-                    <img src="https://th.bing.com/th/id/OIP.o0nQJ7-dHh-G2uQvpKom0gHaDt?w=315&h=174&c=7&r=0&o=5&pid=1.7" alt="Тетріс">
-                    <h3>Тетріс</h3>
-                </a>
-            </div>
+            <main role="main" class="pb-3">
+                @RenderBody()
+            </main>
         </div>
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
     </div>
-
-   @*  <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2024 - ігри - <a asp-area="" asp-page="/Privacy">Privacy</a>
-        </div>
-    </footer> *@
+    
+    <script>
+        function checkURL() {
+            var currentURL = window.location.href; 
+            if (currentURL === 'https://localhost:7080/') {
+                document.getElementById('Popular').click();
+            }
+        }
+        window.onload = checkURL;
+    </script>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

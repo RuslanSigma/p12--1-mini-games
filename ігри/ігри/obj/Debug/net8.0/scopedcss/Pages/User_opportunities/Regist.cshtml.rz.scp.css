@@ -1,0 +1,94 @@
+body[b-jt9byo7dqa] {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container[b-jt9byo7dqa] {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px 10px 0 0; /* Прибрано нижнє заокруглення */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    margin-bottom: 0; /* Прибрано відстань знизу */
+}
+
+    .container.signin[b-jt9byo7dqa] {
+        justify-content: center;
+        background-color: #f9f9f9;
+        padding: 10px;
+        border-top: 1px solid #ddd;
+        text-align: center;
+        border-radius: 0 0 10px 10px; /* Прибрано верхнє заокруглення */
+        margin-top: 0; /* Прибрано відстань зверху */
+        opacity: 0.65;
+    }
+
+        .container.signin:hover[b-jt9byo7dqa] {
+            opacity: 0.95;
+        }
+
+
+h1[b-jt9byo7dqa] {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+}
+
+p[b-jt9byo7dqa] {
+    text-align: center;
+    color: #666;
+    font-size: 14px;
+}
+
+hr[b-jt9byo7dqa] {
+    border: 0;
+    height: 1px;
+    background: #ddd;
+    margin: 20px 0;
+}
+
+label[b-jt9byo7dqa] {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: bold;
+}
+
+input[type=text][b-jt9byo7dqa], input[type=password][b-jt9byo7dqa] {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0 16px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+    input[type=text]:focus[b-jt9byo7dqa], input[type=password]:focus[b-jt9byo7dqa] {
+        border-color: #4CAF50;
+        outline: none;
+        box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
+    }
+
+.registerbtn[b-jt9byo7dqa] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+    .registerbtn:hover[b-jt9byo7dqa] {
+        background-color: #45a049;
+    }

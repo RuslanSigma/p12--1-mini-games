@@ -3,100 +3,95 @@
 @{
     ViewData["Title"] = "Home page";
 }
-<!DOCTYPE html>
-<html lang="ua">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Сапер</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            background-color: #f0f0f0;
-            margin: 0;
+
+<link rel="stylesheet" href="~/css/game4.css">
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+        margin: 0;
+    }
+
+    h1 {
+        margin-bottom: 20px;
+    }
+
+    .board {
+        display: grid;
+        gap: 2px;
+    }
+
+    .cell {
+        width: 30px;
+        height: 30px;
+        background-color: #ccc;
+        text-align: center;
+        line-height: 30px;
+        cursor: pointer;
+        font-size: 16px;
+        border: 1px solid #999;
+    }
+
+        .cell.open {
+            background-color: #eee;
+            cursor: default;
         }
 
-        h1 {
-            margin-bottom: 20px;
+        .cell.mine {
+            background-color: red;
         }
 
-        .board {
-            display: grid;
-            gap: 2px;
+        .cell.flag {
+            background-color: yellow;
+            cursor: default;
         }
 
-        .cell {
-            width: 30px;
-            height: 30px;
-            background-color: #ccc;
-            text-align: center;
-            line-height: 30px;
-            cursor: pointer;
-            font-size: 16px;
-            border: 1px solid #999;
+        .cell.number-1 {
+            color: blue;
         }
 
-            .cell.open {
-                background-color: #eee;
-                cursor: default;
-            }
-
-            .cell.mine {
-                background-color: red;
-            }
-
-            .cell.flag {
-                background-color: yellow;
-                cursor: default;
-            }
-
-            .cell.number-1 {
-                color: blue;
-            }
-
-            .cell.number-2 {
-                color: green;
-            }
-
-            .cell.number-3 {
-                color: red;
-            }
-
-            .cell.number-4 {
-                color: darkblue;
-            }
-
-            .cell.number-5 {
-                color: darkred;
-            }
-
-            .cell.number-6 {
-                color: darkcyan;
-            }
-
-            .cell.number-7 {
-                color: black;
-            }
-
-            .cell.number-8 {
-                color: gray;
-            }
-
-        .controls {
-            margin-bottom: 20px;
+        .cell.number-2 {
+            color: green;
         }
 
-        .difficulty-buttons button {
-            margin: 0 5px;
+        .cell.number-3 {
+            color: red;
         }
-    </style>
-</head>
-<body>
+
+        .cell.number-4 {
+            color: darkblue;
+        }
+
+        .cell.number-5 {
+            color: darkred;
+        }
+
+        .cell.number-6 {
+            color: darkcyan;
+        }
+
+        .cell.number-7 {
+            color: black;
+        }
+
+        .cell.number-8 {
+            color: gray;
+        }
+
+    .controls {
+        margin-bottom: 20px;
+    }
+
+    .difficulty-buttons button {
+        margin: 0 5px;
+    }
+
+</style>
     <h1>Сапер</h1>
     <div class="controls">
         <div class="difficulty-buttons">
@@ -263,5 +258,4 @@
 
         startGame('hard');
     </script>
-</body>
-</html>
+

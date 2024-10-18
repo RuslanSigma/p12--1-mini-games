@@ -1,0 +1,19 @@
+﻿@page
+@model ігри.Pages.User_opportunities.Sign_inModel
+@{
+}
+<div class="container3">
+    <h1>Sign In</h1>
+    <hr>
+    <div>
+        <label>Email:</label>
+        <input type="text" @@bind="email" class="form-control" placeholder="Enter email" />
+    </div>
+    <div>
+        <label>Password:</label>
+        <input type="password" @@bind="password" class="form-control" placeholder="Enter password" />
+    </div>
+    <hr>
+    <button @@onclick="HandleLogin" class="btn btn-primary">Sign In</button>
+    <p style="color:black; margin-top: 20px;">Don't have an account? <a asp-page="/User_opportunities/Regist">Register</a></p>
+</div>

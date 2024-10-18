@@ -1,0 +1,20 @@
+﻿@page
+@model ігри.Pages.kwizesModel
+@{
+}
+<h2>Квізи</h2>
+
+<div class="content">
+    <a asp-area="" asp-page="/kwiz2" onclick="hideOtherElements(this)" target="_self"
+       class="anime-card">
+        <img src="https://st5.depositphotos.com/38909590/68985/i/380/depositphotos_689853126-stock-photo-quiz-wooden-cubes-pen-calculator.jpg"
+             alt="Космос квіз">
+        <h3>Космічний квіз</h3>
+    </a>
+    <a asp-area="" asp-page="/kwiz1" onclick="hideOtherElements(this)" target="_self"
+       class="anime-card">
+        <img src="https://st5.depositphotos.com/38909590/68985/i/380/depositphotos_689853126-stock-photo-quiz-wooden-cubes-pen-calculator.jpg"
+             alt="Квіз">
+        <h3>Математичний квіз</h3>
+    </a>
+</div>

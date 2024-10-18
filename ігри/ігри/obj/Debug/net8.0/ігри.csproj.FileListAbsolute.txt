@@ -58,3 +58,299 @@ D:\python\дщд\ігри\ігри\obj\Debug\net8.0\refint\ігри.dll
 D:\python\дщд\ігри\ігри\obj\Debug\net8.0\ігри.pdb
 D:\python\дщд\ігри\ігри\obj\Debug\net8.0\ігри.genruntimeconfig.cache
 D:\python\дщд\ігри\ігри\obj\Debug\net8.0\ref\ігри.dll
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\appsettings.Development.json
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\appsettings.json
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\ігри.staticwebassets.runtime.json
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\ігри.exe
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\ігри.deps.json
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\ігри.runtimeconfig.json
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\ігри.dll
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\ігри.pdb
+Z:\Нова папка\репозиторий\ігри\ігри\obj\Debug\net8.0\ігри.GeneratedMSBuildEditorConfig.editorconfig
+Z:\Нова папка\репозиторий\ігри\ігри\obj\Debug\net8.0\ігри.AssemblyInfoInputs.cache
+Z:\Нова папка\репозиторий\ігри\ігри\obj\Debug\net8.0\ігри.AssemblyInfo.cs
+Z:\Нова папка\репозиторий\ігри\ігри\obj\Debug\net8.0\ігри.csproj.CoreCompileInputs.cache
+Z:\Нова папка\репозиторий\ігри\ігри\obj\Debug\net8.0\ігри.MvcApplicationPartsAssemblyInfo.cache
+Z:\Нова папка\репозиторий\ігри\ігри\obj\Debug\net8.0\ігри.RazorAssemblyInfo.cache
+Z:\Нова папка\репозиторий\ігри\ігри\obj\Debug\net8.0\ігри.RazorAssemblyInfo.cs
+Z:\Нова папка\репозиторий\ігри\ігри\obj\Debug\net8.0\ігри.sourcelink.json
+Z:\Нова папка\репозиторий\ігри\ігри\obj\Debug\net8.0\staticwebassets.build.json
+Z:\Нова папка\репозиторий\ігри\ігри\obj\Debug\net8.0\staticwebassets.development.json
+Z:\Нова папка\репозиторий\ігри\ігри\obj\Debug\net8.0\staticwebassets\msbuild.ігри.Microsoft.AspNetCore.StaticWebAssets.props
+Z:\Нова папка\репозиторий\ігри\ігри\obj\Debug\net8.0\staticwebassets\msbuild.build.ігри.props
+Z:\Нова папка\репозиторий\ігри\ігри\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.ігри.props
+Z:\Нова папка\репозиторий\ігри\ігри\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.ігри.props
+Z:\Нова папка\репозиторий\ігри\ігри\obj\Debug\net8.0\staticwebassets.pack.json
+Z:\Нова папка\репозиторий\ігри\ігри\obj\Debug\net8.0\scopedcss\Pages\Shared\Main.cshtml.rz.scp.css
+Z:\Нова папка\репозиторий\ігри\ігри\obj\Debug\net8.0\scopedcss\bundle\ігри.styles.css
+Z:\Нова папка\репозиторий\ігри\ігри\obj\Debug\net8.0\scopedcss\projectbundle\ігри.bundle.scp.css
+Z:\Нова папка\репозиторий\ігри\ігри\obj\Debug\net8.0\ігри.dll
+Z:\Нова папка\репозиторий\ігри\ігри\obj\Debug\net8.0\refint\ігри.dll
+Z:\Нова папка\репозиторий\ігри\ігри\obj\Debug\net8.0\ігри.pdb
+Z:\Нова папка\репозиторий\ігри\ігри\obj\Debug\net8.0\ігри.genruntimeconfig.cache
+Z:\Нова папка\репозиторий\ігри\ігри\obj\Debug\net8.0\ref\ігри.dll
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\libe_sqlite3.so
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\BouncyCastle.Cryptography.dll
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\Google.Protobuf.dll
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\K4os.Compression.LZ4.dll
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\K4os.Compression.LZ4.Streams.dll
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\K4os.Hash.xxHash.dll
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\Microsoft.Data.Sqlite.dll
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Sqlite.dll
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\MySql.Data.dll
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\Sabatex.Sqlite.Ubuntu16_04LTS.dll
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\SQLitePCLRaw.batteries_v2.dll
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\SQLitePCLRaw.core.dll
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\SQLitePCLRaw.provider.e_sqlite3.dll
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\System.Diagnostics.DiagnosticSource.dll
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\System.Security.Permissions.dll
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\System.Text.Json.dll
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\System.Windows.Extensions.dll
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\ZstdSharp.dll
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\runtimes\win-x64\native\comerr64.dll
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\runtimes\win-x64\native\gssapi64.dll
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\runtimes\win-x64\native\k5sprt64.dll
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\runtimes\win-x64\native\krb5_64.dll
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\runtimes\win-x64\native\krbcc64.dll
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\runtimes\browser-wasm\nativeassets\net8.0\e_sqlite3.a
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\runtimes\linux-arm\native\libe_sqlite3.so
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\runtimes\linux-arm64\native\libe_sqlite3.so
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\runtimes\linux-armel\native\libe_sqlite3.so
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\runtimes\linux-mips64\native\libe_sqlite3.so
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\runtimes\linux-musl-arm\native\libe_sqlite3.so
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\runtimes\linux-musl-arm64\native\libe_sqlite3.so
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\runtimes\linux-musl-x64\native\libe_sqlite3.so
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\runtimes\linux-ppc64le\native\libe_sqlite3.so
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\runtimes\linux-s390x\native\libe_sqlite3.so
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\runtimes\linux-x64\native\libe_sqlite3.so
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\runtimes\linux-x86\native\libe_sqlite3.so
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\runtimes\maccatalyst-arm64\native\libe_sqlite3.dylib
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\runtimes\maccatalyst-x64\native\libe_sqlite3.dylib
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\runtimes\osx-arm64\native\libe_sqlite3.dylib
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\runtimes\osx-x64\native\libe_sqlite3.dylib
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\runtimes\win-arm\native\e_sqlite3.dll
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\runtimes\win-arm64\native\e_sqlite3.dll
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\runtimes\win-x64\native\e_sqlite3.dll
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\runtimes\win-x86\native\e_sqlite3.dll
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Windows.Extensions.dll
+Z:\Нова папка\репозиторий\ігри\ігри\obj\Debug\net8.0\ігри.csproj.AssemblyReference.cache
+Z:\Нова папка\репозиторий\ігри\ігри\obj\Debug\net8.0\ігри.csproj.CopyComplete
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\Microsoft.ApplicationInsights.dll
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\Microsoft.ApplicationInsights.AspNetCore.dll
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\Microsoft.AI.DependencyCollector.dll
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\Microsoft.AI.EventCounterCollector.dll
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\Microsoft.AI.PerfCounterCollector.dll
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\Microsoft.AI.WindowsServer.dll
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\Microsoft.AI.ServerTelemetryChannel.dll
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\Microsoft.Extensions.Logging.ApplicationInsights.dll
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\System.Diagnostics.PerformanceCounter.dll
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\runtimes\win\lib\netcoreapp2.0\System.Diagnostics.PerformanceCounter.dll
+Z:\Нова папка\репозиторий\ігри\ігри\obj\Debug\net8.0\scopedcss\Pages\Popular.cshtml.rz.scp.css
+Z:\Нова папка\репозиторий\ігри\ігри\obj\Debug\net8.0\scopedcss\Pages\game1.cshtml.rz.scp.css
+Z:\Нова папка\репозиторий\ігри\ігри\obj\Debug\net8.0\scopedcss\Pages\game2.cshtml.rz.scp.css
+Z:\Нова папка\репозиторий\ігри\ігри\obj\Debug\net8.0\scopedcss\Pages\game3.cshtml.rz.scp.css
+Z:\Нова папка\репозиторий\ігри\ігри\obj\Debug\net8.0\scopedcss\Pages\game4.cshtml.rz.scp.css
+Z:\Нова папка\репозиторий\ігри\ігри\obj\Debug\net8.0\scopedcss\Pages\User_opportunities\Regist.cshtml.rz.scp.css
+Z:\Нова папка\репозиторий\ігри\ігри\obj\Debug\net8.0\scopedcss\Pages\User_opportunities\Sign_in.cshtml.rz.scp.css
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\Azure.Core.dll
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\Azure.Identity.dll
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\EntityFramework.SqlServer.dll
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\EntityFramework.dll
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\Microsoft.Data.SqlClient.dll
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\Microsoft.Identity.Client.dll
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\Microsoft.Identity.Client.Extensions.Msal.dll
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\System.ClientModel.dll
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\System.CodeDom.dll
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\System.Data.SqlClient.dll
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\System.Memory.Data.dll
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\System.Runtime.Caching.dll
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\de\Microsoft.Data.SqlClient.resources.dll
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\es\Microsoft.Data.SqlClient.resources.dll
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\fr\Microsoft.Data.SqlClient.resources.dll
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\it\Microsoft.Data.SqlClient.resources.dll
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\ja\Microsoft.Data.SqlClient.resources.dll
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\ko\Microsoft.Data.SqlClient.resources.dll
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\pt-BR\Microsoft.Data.SqlClient.resources.dll
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\ru\Microsoft.Data.SqlClient.resources.dll
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\zh-Hans\Microsoft.Data.SqlClient.resources.dll
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\zh-Hant\Microsoft.Data.SqlClient.resources.dll
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\runtimes\unix\lib\net8.0\Microsoft.Data.SqlClient.dll
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\runtimes\win\lib\net8.0\Microsoft.Data.SqlClient.dll
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\runtimes\win-arm64\native\sni.dll
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\runtimes\win-x64\native\sni.dll
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\runtimes\win-x86\native\sni.dll
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+Z:\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Runtime.Caching.dll
+Z:\Нова папка\репозиторий\ігри\ігри\obj\Debug\net8.0\scopedcss\Pages\game5.cshtml.rz.scp.css
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\libe_sqlite3.so
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\appsettings.json
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\ігри.staticwebassets.runtime.json
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\ігри.exe
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\ігри.deps.json
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\ігри.runtimeconfig.json
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\ігри.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\ігри.pdb
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\Azure.Core.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\Azure.Identity.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\BouncyCastle.Cryptography.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\EntityFramework.SqlServer.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\EntityFramework.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\Google.Protobuf.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\K4os.Compression.LZ4.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\K4os.Compression.LZ4.Streams.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\K4os.Hash.xxHash.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\Microsoft.ApplicationInsights.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\Microsoft.ApplicationInsights.AspNetCore.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\Microsoft.AI.DependencyCollector.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\Microsoft.AI.EventCounterCollector.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\Microsoft.AI.WindowsServer.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\Microsoft.Data.SqlClient.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\Microsoft.Data.Sqlite.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Sqlite.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\Microsoft.Extensions.Logging.ApplicationInsights.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\Microsoft.Identity.Client.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\MySql.Data.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\Sabatex.Sqlite.Ubuntu16_04LTS.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\SQLitePCLRaw.batteries_v2.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\SQLitePCLRaw.core.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\SQLitePCLRaw.provider.e_sqlite3.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\System.ClientModel.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\System.CodeDom.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\System.Data.SqlClient.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\System.Diagnostics.PerformanceCounter.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\System.Memory.Data.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\System.Runtime.Caching.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\System.Security.Permissions.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\System.Windows.Extensions.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\ZstdSharp.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\de\Microsoft.Data.SqlClient.resources.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\es\Microsoft.Data.SqlClient.resources.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\fr\Microsoft.Data.SqlClient.resources.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\it\Microsoft.Data.SqlClient.resources.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\ja\Microsoft.Data.SqlClient.resources.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\ko\Microsoft.Data.SqlClient.resources.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\pt-BR\Microsoft.Data.SqlClient.resources.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\ru\Microsoft.Data.SqlClient.resources.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\zh-Hans\Microsoft.Data.SqlClient.resources.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\zh-Hant\Microsoft.Data.SqlClient.resources.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\runtimes\unix\lib\net8.0\Microsoft.Data.SqlClient.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\runtimes\win\lib\net8.0\Microsoft.Data.SqlClient.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\runtimes\win-x64\native\comerr64.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\runtimes\win-x64\native\gssapi64.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\runtimes\win-x64\native\k5sprt64.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\runtimes\win-x64\native\krb5_64.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\runtimes\win-x64\native\krbcc64.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\runtimes\win-arm64\native\sni.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\runtimes\win-x64\native\sni.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\runtimes\win-x86\native\sni.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\runtimes\browser-wasm\nativeassets\net8.0\e_sqlite3.a
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\runtimes\linux-arm\native\libe_sqlite3.so
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\runtimes\linux-arm64\native\libe_sqlite3.so
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\runtimes\linux-armel\native\libe_sqlite3.so
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\runtimes\linux-mips64\native\libe_sqlite3.so
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\runtimes\linux-musl-arm\native\libe_sqlite3.so
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\runtimes\linux-musl-arm64\native\libe_sqlite3.so
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\runtimes\linux-musl-x64\native\libe_sqlite3.so
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\runtimes\linux-ppc64le\native\libe_sqlite3.so
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\runtimes\linux-s390x\native\libe_sqlite3.so
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\runtimes\linux-x64\native\libe_sqlite3.so
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\runtimes\linux-x86\native\libe_sqlite3.so
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\runtimes\maccatalyst-arm64\native\libe_sqlite3.dylib
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\runtimes\maccatalyst-x64\native\libe_sqlite3.dylib
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\runtimes\osx-arm64\native\libe_sqlite3.dylib
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\runtimes\osx-x64\native\libe_sqlite3.dylib
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\runtimes\win-arm\native\e_sqlite3.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\runtimes\win-arm64\native\e_sqlite3.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\runtimes\win-x64\native\e_sqlite3.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\runtimes\win-x86\native\e_sqlite3.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\runtimes\win\lib\netcoreapp2.0\System.Diagnostics.PerformanceCounter.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Runtime.Caching.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Windows.Extensions.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\obj\Debug\net8.0\ігри.csproj.AssemblyReference.cache
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\obj\Debug\net8.0\ігри.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\obj\Debug\net8.0\ігри.AssemblyInfoInputs.cache
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\obj\Debug\net8.0\ігри.AssemblyInfo.cs
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\obj\Debug\net8.0\ігри.csproj.CoreCompileInputs.cache
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\obj\Debug\net8.0\ігри.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\obj\Debug\net8.0\ігри.RazorAssemblyInfo.cache
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\obj\Debug\net8.0\ігри.RazorAssemblyInfo.cs
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\obj\Debug\net8.0\ігри.sourcelink.json
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\obj\Debug\net8.0\staticwebassets\msbuild.ігри.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\obj\Debug\net8.0\staticwebassets\msbuild.build.ігри.props
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.ігри.props
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.ігри.props
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\obj\Debug\net8.0\scopedcss\Pages\game1.cshtml.rz.scp.css
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\obj\Debug\net8.0\scopedcss\Pages\game2.cshtml.rz.scp.css
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\obj\Debug\net8.0\scopedcss\Pages\game3.cshtml.rz.scp.css
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\obj\Debug\net8.0\scopedcss\Pages\game4.cshtml.rz.scp.css
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\obj\Debug\net8.0\scopedcss\Pages\game5.cshtml.rz.scp.css
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\obj\Debug\net8.0\scopedcss\Pages\Popular.cshtml.rz.scp.css
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\obj\Debug\net8.0\scopedcss\Pages\Shared\Main.cshtml.rz.scp.css
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\obj\Debug\net8.0\scopedcss\Pages\User_opportunities\Regist.cshtml.rz.scp.css
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\obj\Debug\net8.0\scopedcss\bundle\ігри.styles.css
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\obj\Debug\net8.0\scopedcss\projectbundle\ігри.bundle.scp.css
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\obj\Debug\net8.0\ігри.csproj.Up2Date
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\obj\Debug\net8.0\ігри.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\obj\Debug\net8.0\refint\ігри.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\obj\Debug\net8.0\ігри.pdb
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\obj\Debug\net8.0\ігри.genruntimeconfig.cache
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\obj\Debug\net8.0\ref\ігри.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\obj\Debug\net8.0\scopedcss\Pages\User_opportunities\Sign_in.cshtml.rz.scp.css
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\obj\Debug\net8.0\scopedcss\Pages\kwiz2.cshtml.rz.scp.css
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\obj\Debug\net8.0\scopedcss\Pages\games.cshtml.rz.scp.css
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\obj\Debug\net8.0\scopedcss\Pages\kwizes.cshtml.rz.scp.css
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\System.Data.SQLite.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\System.Data.SQLite.EF6.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\runtimes\linux-x64\native\SQLite.Interop.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\runtimes\osx-x64\native\SQLite.Interop.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\runtimes\win-x64\native\SQLite.Interop.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\bin\Debug\net8.0\runtimes\win-x86\native\SQLite.Interop.dll
+C:\Users\ggg81\Downloads\Нова папка\Нова папка\репозиторий\ігри\ігри\obj\Debug\net8.0\scopedcss\Pages\Achievments.cshtml.rz.scp.css
