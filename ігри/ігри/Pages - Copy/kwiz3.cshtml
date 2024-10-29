@@ -1,0 +1,169 @@
+﻿@page
+@model ігри.Pages.kwiz3Model
+@{
+}
+<div class="quiz-container">
+        <h1>Фізична вікторина</h1>
+        <h2 id="question-number">Питання 1/10</h2>
+        <p class="question" id="question-text">Що таке гравітація?</p>
+        <form id="quiz-form">
+            <div class="option-container">
+                <div class="option">
+                    <input type="radio" id="option1" name="answer" value="Сила, яка притягує об'єкти один до одного">
+                    <label for="option1" id="label1">Сила, яка притягує об'єкти один до одного</label>
+                </div>
+                <div class="option">
+                    <input type="radio" id="option2" name="answer" value="Сила, яка відштовхує об'єкти один від одного">
+                    <label for="option2" id="label2">Сила, яка відштовхує об'єкти один від одного</label>
+                </div>
+                <div class="option">
+                    <input type="radio" id="option3" name="answer" value="Сила, яка рухає об'єкти горизонтально">
+                    <label for="option3" id="label3">Сила, яка рухає об'єкти горизонтально</label>
+                </div>
+            </div>
+            <button type="button" onclick="submitAnswer()">Відповісти</button>
+        </form>
+        <div id="feedback" class="feedback"></div>
+        <button type="button" id="next-button" style="display:none;" onclick="nextQuestion()">Далі</button>
+        <div id="result" class="result" style="display:none;"></div>
+    </div>
+    <script>
+        const questions = [
+            {
+                text: 'Що таке гравітація?',
+                image: 'data:image/jpeg;base64,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',
+                options: ['Сила, яка притягує об\'єкти один до одного', 'Сила, яка відштовхує об\'єкти один від одного', 'Сила, яка рухає об\'єкти горизонтально'],
+                correct: 'Сила, яка притягує об\'єкти один до одного'
+            },
+            {
+                text: 'Як називається найменша частинка хімічного елемента?',
+                image: '',
+                options: ['Атом', 'Молекула', 'Електрон'],
+                correct: 'Атом'
+            },
+            {
+                text: 'Яка одиниця вимірювання електричного струму?',
+                image: '',
+                options: ['Вольт', 'Ампер', 'Ом'],
+                correct: 'Ампер'
+            },
+            {
+                text: 'Який закон описує відношення між силою, масою та прискоренням?',
+                image: '',
+                options: ['Закон Ома', 'Другий закон Ньютона', 'Закон Архімеда'],
+                correct: 'Другий закон Ньютона'
+            },
+            {
+                text: 'Що таке кінетична енергія?',
+                image: '',
+                options: ['Енергія руху', 'Енергія спокою', 'Енергія взаємодії'],
+                correct: 'Енергія руху'
+            },
+            {
+                text: 'Який елемент є основним компонентом сонячних батарей?',
+                image: '',
+                options: ['Кремній', 'Вуглець', 'Залізо'],
+                correct: 'Кремній'
+            },
+            {
+                text: 'Що вимірюється в Паскалях?',
+                image: '',
+                options: ['Тиск', 'Температура', 'Енергія'],
+                correct: 'Тиск'
+            },
+            {
+                text: 'Який закон пояснює взаємодію електричних зарядів?',
+                image: '',
+                options: ['Закон Кулона', 'Закон Бойля', 'Закон Фарадея'],
+                correct: 'Закон Кулона'
+            },
+            {
+                text: 'Який прилад використовується для вимірювання температури?',
+                image: '',
+                options: ['Термометр', 'Барометр', 'Манометр'],
+                correct: 'Термометр'
+            },
+            {
+                text: 'Як називається процес переходу рідини в газоподібний стан?',
+                image: '',
+                options: ['Конденсація', 'Випаровування', 'Сублімація'],
+                correct: 'Випаровування'
+            }
+        ];
+
+        function shuffleQuestions(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        shuffleQuestions(questions);
+
+        let currentQuestionIndex = 0;
+        let score = 0;
+
+        function submitAnswer() {
+            const selectedOption = document.querySelector('input[name="answer"]:checked');
+            const feedback = document.getElementById('feedback');
+
+            if (selectedOption) {
+                const isCorrect = selectedOption.value === questions[currentQuestionIndex].correct;
+                feedback.textContent = isCorrect ? 'Правильно!' : 'Неправильно!';
+                feedback.className = `feedback ${isCorrect ? 'correct' : 'incorrect'}`;
+                feedback.style.display = 'block';
+                document.getElementById('next-button').style.display = 'block';
+                if (isCorrect) {
+                    score++;
+                }
+                document.querySelectorAll('input[name="answer"]').forEach(input => {
+                    input.disabled = true;
+                });
+            }
+        }
+
+        function nextQuestion() {
+            currentQuestionIndex++;
+            if (currentQuestionIndex < questions.length) {
+                document.getElementById('next-button').style.display = 'none';
+                document.getElementById('feedback').style.display = 'none';
+                loadQuestion();
+            } else {
+                showResult();
+            }
+        }
+
+        function loadQuestion() {
+            const question = questions[currentQuestionIndex];
+            document.getElementById('question-number').innerText = `Питання ${currentQuestionIndex + 1}/${questions.length}`;
+            document.getElementById('question-text').innerText = question.text;
+            document.getElementById('label1').innerText = question.options[0];
+            document.getElementById('label2').innerText = question.options[1];
+            document.getElementById('label3').innerText = question.options[2];
+            document.getElementById('option1').value = question.options[0];
+            document.getElementById('option2').value = question.options[1];
+            document.getElementById('option3').value = question.options[2];
+            document.getElementById('quiz-form').reset();
+            document.querySelectorAll('input[name="answer"]').forEach(input => {
+                input.disabled = false;
+            });
+        }
+
+        function showResult() {
+            const result = document.getElementById('result');
+            let rating;
+            if (score >= 9) {
+                rating = 'Ейнштейн';
+            } else if (score >= 6) {
+                rating = 'Фізик-аматор';
+            } else {
+                rating = 'Новачок у фізиці';
+            }
+            result.innerHTML = `<p>Ви завершили вікторину!</p>
+                                        <p>Ваш рахунок: ${score} з ${questions.length}</p>
+                                        <p>Ваш ранг: ${rating}</p>`;
+            result.style.display = 'block';
+        }
+
+        loadQuestion();
+    </script>

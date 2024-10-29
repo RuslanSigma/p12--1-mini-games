@@ -4,6 +4,7 @@ namespace ігри.Data
 {
     public class UserService : IUserService
     {
+
         private readonly string _connectionString;
 
         public UserService(string connectionString)

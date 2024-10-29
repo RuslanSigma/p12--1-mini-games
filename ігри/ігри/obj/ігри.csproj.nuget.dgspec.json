@@ -58,6 +58,10 @@
               "target": "Package",
               "version": "[2.21.0, )"
             },
+            "Microsoft.AspNetCore.Mvc.RazorPages": {
+              "target": "Package",
+              "version": "[2.2.5, )"
+            },
             "Microsoft.Data.SqlClient": {
               "target": "Package",
               "version": "[5.2.2, )"
@@ -65,6 +69,20 @@
             "Microsoft.Data.Sqlite": {
               "target": "Package",
               "version": "[8.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.10, )"
             },
             "MySql.Data": {
               "target": "Package",

@@ -1,4 +1,6 @@
-﻿namespace ігри.Data
+﻿using Microsoft.Extensions.DependencyInjection;
+
+namespace ігри.Data
 {
     public class Startup
     {

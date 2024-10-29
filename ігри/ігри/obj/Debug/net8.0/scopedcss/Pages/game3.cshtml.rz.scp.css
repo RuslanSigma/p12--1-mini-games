@@ -1,3 +1,4 @@
+
 body[b-fkpadfdi9i] {
     font-family: sans-serif;
     display: flex;
@@ -18,13 +19,14 @@ h1[b-fkpadfdi9i] {
 .board[b-fkpadfdi9i] {
     display: grid;
     gap: 5px;
-    height:170px;
-    width:170px;
+    height: 170px;
+    width: 170px;
     grid-template-columns: repeat(3, 50px);
     margin-bottom: 20px;
     visibility: hidden; /* Спочатку приховано */
 }
-.board .cell[b-fkpadfdi9i] {
+
+    .board .cell[b-fkpadfdi9i] {
         width: 50px;
         height: 50px;
         display: flex;
@@ -37,7 +39,8 @@ h1[b-fkpadfdi9i] {
         transition: background-color 0.3s, color 0.3s;
         color: #FFFFFF; /* Білий текст всередині клітинок */
     }
-.board .cell:hover[b-fkpadfdi9i] {
+
+        .board .cell:hover[b-fkpadfdi9i] {
             background-color: #99AAB5; /* Світло-сірий при наведенні */
             color: #2C2F33; /* Темно-сірий текст при наведенні */
         }

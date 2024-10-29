@@ -1,0 +1,23 @@
+﻿body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+}
+
+#tetris {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+canvas {
+    border: 2px solid #000;
+}
+
+#score {
+    margin-top: 10px;
+    font-size: 20px;
+}

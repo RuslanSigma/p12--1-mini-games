@@ -1,0 +1,37 @@
+﻿body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.board {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    background-color: #000;
+    overflow: hidden;
+    border: 1px solid #000;
+}
+
+.snake {
+    position: absolute;
+    background-color: #0f0;
+}
+
+.apple {
+    position: absolute;
+    background-color: #f00;
+}
+
+.controls {
+    margin-bottom: 20px;
+}

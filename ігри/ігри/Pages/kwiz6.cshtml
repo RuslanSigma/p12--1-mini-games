@@ -1,0 +1,151 @@
+﻿@page
+@model ігри.Pages.kwiz6Model
+@{
+}
+<div class="quiz-container">
+    <h1>Тест з політичної географії</h1>
+    <h2 id="question-number">Питання 1/10</h2>
+    <p class="question" id="question-text">Яка столиця Канади?</p>
+    <form id="quiz-form">
+        <div class="option-container">
+            <div class="option">
+                <input type="radio" id="option1" name="answer" value="Оттава">
+                <label for="option1" id="label1">Оттава</label>
+            </div>
+            <div class="option">
+                <input type="radio" id="option2" name="answer" value="Торонто">
+                <label for="option2" id="label2">Торонто</label>
+            </div>
+            <div class="option">
+                <input type="radio" id="option3" name="answer" value="Монреаль">
+                <label for="option3" id="label3">Монреаль</label>
+            </div>
+        </div>
+        <button type="button" onclick="submitAnswer()">Відповісти</button>
+    </form>
+    <div id="feedback" class="feedback"></div>
+    <button type="button" id="next-button" style="display:none;" onclick="nextQuestion()">Далі</button>
+    <div id="result" class="result" style="display:none;"></div>
+</div>
+<script>
+    const questions = [
+        {
+            text: 'Яка столиця Канади?',
+            options: ['Оттава', 'Торонто', 'Монреаль'],
+            correct: 'Оттава'
+        },
+        {
+            text: 'Яка країна має найбільшу площу у світі?',
+            options: ['Росія', 'Канада', 'Китай'],
+            correct: 'Росія'
+        },
+        {
+            text: 'Яка країна не є членом Європейського Союзу?',
+            options: ['Швейцарія', 'Іспанія', 'Нідерланди'],
+            correct: 'Швейцарія'
+        },
+        {
+            text: 'Яка столиця Австралії?',
+            options: ['Канберра', 'Сідней', 'Мельбурн'],
+            correct: 'Канберра'
+        },
+        {
+            text: 'Яке місто є штаб-квартирою ООН?',
+            options: ['Нью-Йорк', 'Женева', 'Відень'],
+            correct: 'Нью-Йорк'
+        },
+        {
+            text: 'Яка річка є природним кордоном між США та Мексикою?',
+            options: ['Ріо-Гранде', 'Міссісіпі', 'Колорадо'],
+            correct: 'Ріо-Гранде'
+        },
+        {
+            text: 'Яка країна омивається обома Атлантичним та Індійським океанами?',
+            options: ['Південна Африка', 'Аргентина', 'Єгипет'],
+            correct: 'Південна Африка'
+        },
+        {
+            text: 'Яке місто є столицею Бразилії?',
+            options: ['Бразиліа', 'Ріо-де-Жанейро', 'Сан-Паулу'],
+            correct: 'Бразиліа'
+        },
+        {
+            text: 'Яка країна розташована на обох континентах – Європі та Азії?',
+            options: ['Туреччина', 'Єгипет', 'Індія'],
+            correct: 'Туреччина'
+        },
+        {
+            text: 'Який континент має найбільшу кількість країн?',
+            options: ['Африка', 'Азія', 'Європа'],
+            correct: 'Африка'
+        }
+    ];
+
+    let currentQuestionIndex = 0;
+    let score = 0;
+
+    function submitAnswer() {
+        const selectedOption = document.querySelector('input[name="answer"]:checked');
+        const feedback = document.getElementById('feedback');
+
+        if (selectedOption) {
+            const isCorrect = selectedOption.value === questions[currentQuestionIndex].correct;
+            feedback.textContent = isCorrect ? 'Правильно!' : 'Неправильно!';
+            feedback.className = `feedback ${isCorrect ? 'correct' : 'incorrect'}`;
+            feedback.style.display = 'block';
+            document.getElementById('next-button').style.display = 'block';
+            if (isCorrect) {
+                score++;
+            }
+            document.querySelectorAll('input[name="answer"]').forEach(input => {
+                input.disabled = true;
+            });
+        }
+    }
+
+    function nextQuestion() {
+        currentQuestionIndex++;
+        if (currentQuestionIndex < questions.length) {
+            document.getElementById('next-button').style.display = 'none';
+            document.getElementById('feedback').style.display = 'none';
+            loadQuestion();
+        } else {
+            showResult();
+        }
+    }
+
+    function loadQuestion() {
+        const question = questions[currentQuestionIndex];
+        document.getElementById('question-number').innerText = `Питання ${currentQuestionIndex + 1}/${questions.length}`;
+        document.getElementById('question-text').innerText = question.text;
+        document.getElementById('label1').innerText = question.options[0];
+        document.getElementById('label2').innerText = question.options[1];
+        document.getElementById('label3').innerText = question.options[2];
+        document.getElementById('option1').value = question.options[0];
+        document.getElementById('option2').value = question.options[1];
+        document.getElementById('option3').value = question.options[2];
+        document.getElementById('quiz-form').reset();
+        document.querySelectorAll('input[name="answer"]').forEach(input => {
+            input.disabled = false;
+        });
+    }
+
+    function showResult() {
+        const result = document.getElementById('result');
+        let rating;
+        if (score >= 9) {
+            rating = 'Експерт з політичної географії';
+        } else if (score >= 6) {
+            rating = 'Добрий знавець політичної географії';
+        } else {
+            rating = 'Початківець у політичній географії';
+        }
+        result.innerHTML = `<p>Ви завершили вікторину!</p>
+                            <p>Ваш рахунок: ${score} з ${questions.length}</p>
+                            <p>Ваш ранг: ${rating}</p>`;
+        result.style.display = 'block';
+        document.getElementById('quiz-form').style.display = 'none';
+    }
+
+    loadQuestion();
+</script>

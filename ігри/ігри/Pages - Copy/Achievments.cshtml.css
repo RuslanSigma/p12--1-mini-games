@@ -1,0 +1,199 @@
+﻿.container {
+    display: flex;
+    min-width: 1200px;
+    height: auto;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 1400px;
+    background-color: #2c2f33;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 100px;
+}
+
+.sidebar {
+    width: 25%;
+    padding: 20px;
+    background-color: #36393f;
+    border-radius: 10px;
+    color: white;
+}
+
+.content {
+    width: 100%;
+    padding: 20px;
+    background-color: #2c2f33;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.content2 {
+    width: 75%;
+    padding: 20px;
+    background-color: #2c2f33;
+    border-radius: 10px;
+    color: white;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    align-self: center;
+}
+
+h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.anime-card {
+    background-color: #36393f;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 32%;
+    margin-right: 1%;
+    color: white;
+    position: relative;
+    transition: transform 0.3s ease;
+    overflow: hidden;
+    justify-content: center;
+}
+
+    .anime-card:hover {
+        transform: scale(1.1);
+    }
+
+    .anime-card img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        transition: transform 0.3s ease;
+    }
+
+    .anime-card:hover img {
+        transform: scale(1.1);
+    }
+
+    .anime-card h3 {
+        margin-top: 10px;
+        margin-bottom: 5px;
+    }
+
+    .anime-card p {
+        margin-bottom: 0;
+    }
+
+.button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+    .button:hover {
+        background-color: #3e8e41;
+    }
+
+.centered-heading {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.sidebar h2 {
+    color: #fff;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    margin-bottom: 10px;
+}
+
+.sidebar a {
+    color: #fff;
+    text-decoration: none;
+}
+
+    .sidebar a:hover {
+        text-decoration: underline;
+    }
+
+.centered-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 5px;
+}
+
+.triangle-button {
+    width: 0;
+    height: 0;
+    border-left: 11.25px solid transparent;
+    border-right: 11.25px solid transparent;
+    border-top: 15px solid #3498db;
+    cursor: pointer;
+    transition: transform 0.3s;
+    margin: 20px auto;
+}
+
+    .triangle-button.open {
+        transform: rotate(180deg);
+    }
+
+.achievements-container {
+    display: none;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.achievement-card {
+    background-color: #36393f;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 32%;
+    margin-right: 1%;
+    color: white;
+    position: relative;
+    transition: transform 0.3s ease;
+    justify-content: center;
+}
+
+    .achievement-card img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        transition: transform 0.3s ease;
+    }
+
+    .achievement-card h3 {
+        margin-top: 10px;
+        margin-bottom: 5px;
+    }
+
+    .achievement-card p {
+        margin-bottom: 0;
+    }
+
+.achievement-status {
+    margin-top: 10px;
+}
+
+    .achievement-status span {
+        font-weight: bold;
+    }

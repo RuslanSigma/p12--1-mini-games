@@ -1,0 +1,66 @@
+﻿@page
+@model ігри.Pages.AchievmentsModel
+@{
+}
+
+<div class="container">
+    <div class="content2">
+            <div class="achievements-container" id="achievements-container">
+            </div>
+    </div>
+</div>
+
+<script>
+    const achievements = [
+        {
+            imgSrc: '~/images/achievement1.png',
+            title: 'Досягнення 1',
+            description: 'Опис досягнення 1',
+            status: 'Отримано'
+        },
+        {
+            imgSrc: '~/images/achievement2.png',
+            title: 'Досягнення 2',
+            description: 'Опис досягнення 2',
+            status: 'Не отримано'
+        }
+    ];
+
+    function createAchievementCard(achievement) {
+        return `
+                <div class="achievement-card">
+                    <img src="${achievement.imgSrc}" alt="${achievement.title}">
+                    <h3>${achievement.title}</h3>
+                    <p>${achievement.description}</p>
+                    <div class="achievement-status">
+                        <span>Статус:</span> ${achievement.status}
+                    </div>
+                </div>
+            `;
+    }
+
+    function loadAchievements() {
+        const container = document.getElementById('achievements-container');
+        achievements.forEach(achievement => {
+            container.innerHTML += createAchievementCard(achievement);
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', loadAchievements);
+
+    function toggleAchievements() {
+        var container = document.getElementById('achievements-container');
+        if (container.style.display === "none" || container.style.display === "") {
+            container.style.display = "flex";
+        } else {
+            container.style.display = "none";
+        }
+    }
+    function checkURL() {
+        var currentURL = window.location.href;
+        if (currentURL === 'https://localhost:7080/Achievments') {
+            toggleAchievements();
+        }
+    }
+    window.onload = checkURL;
+</script>

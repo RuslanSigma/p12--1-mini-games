@@ -216,6 +216,12 @@ body[b-ydt8i9l4ot] {
     flex-direction: column;
 }
 
+#score-container[b-ydt8i9l4ot] {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #776e65;
+}
+
 #board[b-ydt8i9l4ot] {
     width: 400px;
     height: 400px;
@@ -256,244 +262,8 @@ body[b-ydt8i9l4ot] {
         transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
     }
 
-    .tile[data-value="16"][b-ydt8i9l4ot] {
-        background-color: #f59563;
-        color: #f9f6f2;
-        transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
-    }
-
-    .tile[data-value="32"][b-ydt8i9l4ot] {
-        background-color: #f67c5f;
-        color: #f9f6f2;
-        transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
-    }
-
-    .tile[data-value="64"][b-ydt8i9l4ot] {
-        background-color: #f65e3b;
-        color: #f9f6f2;
-        transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
-    }
-
-    .tile[data-value="128"][b-ydt8i9l4ot] {
-        background-color: #edcf72;
-        color: #f9f6f2;
-        transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
-    }
-
-    .tile[data-value="256"][b-ydt8i9l4ot] {
-        background-color: #edcc61;
-        color: #f9f6f2;
-        transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
-    }
-
-    .tile[data-value="512"][b-ydt8i9l4ot] {
-        background-color: #edc850;
-        color: #f9f6f2;
-        transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
-    }
-
-    .tile[data-value="1024"][b-ydt8i9l4ot] {
-        background-color: #edc53f;
-        color: #f9f6f2;
-        transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
-    }
-
-    .tile[data-value="2048"][b-ydt8i9l4ot] {
-        background-color: #edc22e;
-        color: #f9f6f2;
-        transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
-    }
-
-    .tile.move[data-value="2"][b-ydt8i9l4ot] {
-        transition: transform 0.8s ease;
-    }
-
-        /* Плитка зі значенням 2 */
-        .tile.move[data-value="2"].move-right[b-ydt8i9l4ot] {
-            transform: translateX(30px);
-        }
-
-        .tile.move[data-value="2"].move-left[b-ydt8i9l4ot] {
-            transform: translateX(-40px);
-        }
-
-        .tile.move[data-value="2"].move-up[b-ydt8i9l4ot] {
-            transform: translateY(-40px);
-        }
-
-        .tile.move[data-value="2"].move-down[b-ydt8i9l4ot] {
-            transform: translateY(40px);
-        }
-
-    /* Плитка зі значенням 4 */
-    .tile.move[data-value="4"].move-right[b-ydt8i9l4ot] {
-        transform: translateX(35px);
-    }
-
-    .tile.move[data-value="4"].move-left[b-ydt8i9l4ot] {
-        transform: translateX(-35px);
-    }
-
-    .tile.move[data-value="4"].move-up[b-ydt8i9l4ot] {
-        transform: translateY(-35px);
-    }
-
-    .tile.move[data-value="4"].move-down[b-ydt8i9l4ot] {
-        transform: translateY(35px);
-    }
-
-    /* Плитка зі значенням 8 */
-    .tile.move[data-value="8"].move-right[b-ydt8i9l4ot] {
-        transform: translateX(40px);
-    }
-
-    .tile.move[data-value="8"].move-left[b-ydt8i9l4ot] {
-        transform: translateX(-30px);
-    }
-
-    .tile.move[data-value="8"].move-up[b-ydt8i9l4ot] {
-        transform: translateY(-30px);
-    }
-
-    .tile.move[data-value="8"].move-down[b-ydt8i9l4ot] {
-        transform: translateY(30px);
-    }
-
-    /* Плитка зі значенням 16 */
-    .tile.move[data-value="16"].move-right[b-ydt8i9l4ot] {
-        transform: translateX(45px);
-    }
-
-    .tile.move[data-value="16"].move-left[b-ydt8i9l4ot] {
-        transform: translateX(-25px);
-    }
-
-    .tile.move[data-value="16"].move-up[b-ydt8i9l4ot] {
-        transform: translateY(-25px);
-    }
-
-    .tile.move[data-value="16"].move-down[b-ydt8i9l4ot] {
-        transform: translateY(25px);
-    }
-
-    /* Плитка зі значенням 32 */
-    .tile.move[data-value="32"].move-right[b-ydt8i9l4ot] {
-        transform: translateX(50px);
-    }
-
-    .tile.move[data-value="32"].move-left[b-ydt8i9l4ot] {
-        transform: translateX(-20px);
-    }
-
-    .tile.move[data-value="32"].move-up[b-ydt8i9l4ot] {
-        transform: translateY(-20px);
-    }
-
-    .tile.move[data-value="32"].move-down[b-ydt8i9l4ot] {
-        transform: translateY(20px);
-    }
-
-    /* Плитка зі значенням 64 */
-    .tile.move[data-value="64"].move-right[b-ydt8i9l4ot] {
-        transform: translateX(55px);
-    }
-
-    .tile.move[data-value="64"].move-left[b-ydt8i9l4ot] {
-        transform: translateX(-15px);
-    }
-
-    .tile.move[data-value="64"].move-up[b-ydt8i9l4ot] {
-        transform: translateY(-15px);
-    }
-
-    .tile.move[data-value="64"].move-down[b-ydt8i9l4ot] {
-        transform: translateY(15px);
-    }
-
-    /* Плитка зі значенням 128 */
-    .tile.move[data-value="128"].move-right[b-ydt8i9l4ot] {
-        transform: translateX(60px);
-    }
-
-    .tile.move[data-value="128"].move-left[b-ydt8i9l4ot] {
-        transform: translateX(-10px);
-    }
-
-    .tile.move[data-value="128"].move-up[b-ydt8i9l4ot] {
-        transform: translateY(-10px);
-    }
-
-    .tile.move[data-value="128"].move-down[b-ydt8i9l4ot] {
-        transform: translateY(10px);
-    }
-
-    /* Плитка зі значенням 256 */
-    .tile.move[data-value="256"].move-right[b-ydt8i9l4ot] {
-        transform: translateX(65px);
-    }
-
-    .tile.move[data-value="256"].move-left[b-ydt8i9l4ot] {
-        transform: translateX(-5px);
-    }
-
-    .tile.move[data-value="256"].move-up[b-ydt8i9l4ot] {
-        transform: translateY(-5px);
-    }
-
-    .tile.move[data-value="256"].move-down[b-ydt8i9l4ot] {
-        transform: translateY(5px);
-    }
-
-    /* Плитка зі значенням 512 */
-    .tile.move[data-value="512"].move-right[b-ydt8i9l4ot] {
-        transform: translateX(70px);
-    }
-
-    .tile.move[data-value="512"].move-left[b-ydt8i9l4ot] {
-        transform: translateX(0px);
-    }
-
-    .tile.move[data-value="512"].move-up[b-ydt8i9l4ot] {
-        transform: translateY(0px);
-    }
-
-    .tile.move[data-value="512"].move-down[b-ydt8i9l4ot] {
-        transform: translateY(0px);
-    }
-
-    /* Плитка зі значенням 1024 */
-    .tile.move[data-value="1024"].move-right[b-ydt8i9l4ot] {
-        transform: translateX(75px);
-    }
-
-    .tile.move[data-value="1024"].move-left[b-ydt8i9l4ot] {
-        transform: translateX(5px);
-    }
-
-    .tile.move[data-value="1024"].move-up[b-ydt8i9l4ot] {
-        transform: translateY(5px);
-    }
-
-    .tile.move[data-value="1024"].move-down[b-ydt8i9l4ot] {
-        transform: translateY(-5px);
-    }
-
-    /* Плитка зі значенням 2048 */
-    .tile.move[data-value="2048"].move-right[b-ydt8i9l4ot] {
-        transform: translateX(80px);
-    }
-
-    .tile.move[data-value="2048"].move-left[b-ydt8i9l4ot] {
-        transform: translateX(10px);
-    }
-
-    .tile.move[data-value="2048"].move-up[b-ydt8i9l4ot] {
-        transform: translateY(10px);
-    }
-
-    .tile.move[data-value="2048"].move-down[b-ydt8i9l4ot] {
-        transform: translateY(-10px);
-    }
+    .tile.move[b-ydt8i9l4ot] {
+        transition: transform 0.8s ease;}
 /* _content/ігри/Pages/game2.cshtml.rz.scp.css */
 body[b-b11r59os1r] {
     font-family: Arial, sans-serif;
@@ -628,6 +398,7 @@ body[b-b11r59os1r] {
     display: none;
 }
 /* _content/ігри/Pages/game3.cshtml.rz.scp.css */
+
 body[b-fkpadfdi9i] {
     font-family: sans-serif;
     display: flex;
@@ -648,13 +419,14 @@ h1[b-fkpadfdi9i] {
 .board[b-fkpadfdi9i] {
     display: grid;
     gap: 5px;
-    height:170px;
-    width:170px;
+    height: 170px;
+    width: 170px;
     grid-template-columns: repeat(3, 50px);
     margin-bottom: 20px;
     visibility: hidden; /* Спочатку приховано */
 }
-.board .cell[b-fkpadfdi9i] {
+
+    .board .cell[b-fkpadfdi9i] {
         width: 50px;
         height: 50px;
         display: flex;
@@ -667,7 +439,8 @@ h1[b-fkpadfdi9i] {
         transition: background-color 0.3s, color 0.3s;
         color: #FFFFFF; /* Білий текст всередині клітинок */
     }
-.board .cell:hover[b-fkpadfdi9i] {
+
+        .board .cell:hover[b-fkpadfdi9i] {
             background-color: #99AAB5; /* Світло-сірий при наведенні */
             color: #2C2F33; /* Темно-сірий текст при наведенні */
         }
@@ -1112,6 +885,30 @@ body[b-ybv9dljqwz] {
     .tile.move[data-value="2048"].move-down[b-ybv9dljqwz] {
         transform: translateY(-10px);
     }
+/* _content/ігри/Pages/game6.cshtml.rz.scp.css */
+body[b-zkpuet9uba] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+}
+
+#tetris[b-zkpuet9uba] {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+canvas[b-zkpuet9uba] {
+    border: 2px solid #000;
+}
+
+#score[b-zkpuet9uba] {
+    margin-top: 10px;
+    font-size: 20px;
+}
 /* _content/ігри/Pages/games.cshtml.rz.scp.css */
 .container[b-8kkclxwwdu] {
     display: flex;
@@ -1251,6 +1048,270 @@ img[b-hhyseo45k4] {
 .incorrect[b-hhyseo45k4] {
     color: #dc3545;
 }
+/* _content/ігри/Pages/kwiz3.cshtml.rz.scp.css */
+body[b-6orfhmey16] {
+    background-color: #001f3f;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+}
+
+h2[b-6orfhmey16] {
+    color: white;
+}
+
+.quiz-container[b-6orfhmey16] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.question[b-6orfhmey16] {
+    margin-bottom: 20px;
+}
+
+.option-container[b-6orfhmey16] {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.option[b-6orfhmey16] {
+    margin-bottom: 10px;
+}
+
+button[b-6orfhmey16] {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+    button:hover[b-6orfhmey16] {
+        background-color: #0056b3;
+    }
+
+img[b-6orfhmey16] {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.feedback[b-6orfhmey16] {
+    display: none;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.correct[b-6orfhmey16] {
+    color: #28a745;
+}
+
+.incorrect[b-6orfhmey16] {
+    color: #dc3545;
+}
+/* _content/ігри/Pages/kwiz4.cshtml.rz.scp.css */
+body[b-81joxnrxv6] {
+    background-color: #001f3f;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+}
+
+h2[b-81joxnrxv6] {
+    color: white;
+}
+
+.quiz-container[b-81joxnrxv6] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.question[b-81joxnrxv6] {
+    margin-bottom: 20px;
+}
+
+.option-container[b-81joxnrxv6] {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.option[b-81joxnrxv6] {
+    margin-bottom: 10px;
+}
+
+button[b-81joxnrxv6] {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+    button:hover[b-81joxnrxv6] {
+        background-color: #0056b3;
+    }
+
+img[b-81joxnrxv6] {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.feedback[b-81joxnrxv6] {
+    display: none;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.correct[b-81joxnrxv6] {
+    color: #28a745;
+}
+
+.incorrect[b-81joxnrxv6] {
+    color: #dc3545;
+}
+/* _content/ігри/Pages/kwiz5.cshtml.rz.scp.css */
+body[b-eab1lufse9] {
+    background-color: #001f3f;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+}
+
+h2[b-eab1lufse9] {
+    color: white;
+}
+
+.quiz-container[b-eab1lufse9] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.question[b-eab1lufse9] {
+    margin-bottom: 20px;
+}
+
+.option-container[b-eab1lufse9] {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.option[b-eab1lufse9] {
+    margin-bottom: 10px;
+}
+
+button[b-eab1lufse9] {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+    button:hover[b-eab1lufse9] {
+        background-color: #0056b3;
+    }
+
+img[b-eab1lufse9] {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.feedback[b-eab1lufse9] {
+    display: none;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.correct[b-eab1lufse9] {
+    color: #28a745;
+}
+
+.incorrect[b-eab1lufse9] {
+    color: #dc3545;
+}
+/* _content/ігри/Pages/kwiz6.cshtml.rz.scp.css */
+body[b-q7txpr6r3h] {
+    background-color: #001f3f;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+}
+
+h2[b-q7txpr6r3h] {
+    color: white;
+}
+
+.quiz-container[b-q7txpr6r3h] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.question[b-q7txpr6r3h] {
+    margin-bottom: 20px;
+}
+
+.option-container[b-q7txpr6r3h] {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.option[b-q7txpr6r3h] {
+    margin-bottom: 10px;
+}
+
+button[b-q7txpr6r3h] {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+    button:hover[b-q7txpr6r3h] {
+        background-color: #0056b3;
+    }
+
+img[b-q7txpr6r3h] {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.feedback[b-q7txpr6r3h] {
+    display: none;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.correct[b-q7txpr6r3h] {
+    color: #28a745;
+}
+
+.incorrect[b-q7txpr6r3h] {
+    color: #dc3545;
+}
 /* _content/ігри/Pages/kwizes.cshtml.rz.scp.css */
 .container[b-foau5aqmor] {
     display: flex;
@@ -1321,7 +1382,7 @@ h2[b-foau5aqmor] {
 
     .anime-card img[b-foau5aqmor] {
         width: 100%;
-        height: auto;
+        height: 90%;
     }
 
     .anime-card h3[b-foau5aqmor] {
@@ -1329,6 +1390,7 @@ h2[b-foau5aqmor] {
         margin-top: 10px;
         font-size: 1.2em;
     }
+    
 /* _content/ігри/Pages/Popular.cshtml.rz.scp.css */
 .container[b-nt49gbispw] {
     display: flex;
@@ -1448,7 +1510,25 @@ h2 {
         width: 100px;
         padding: 12px 16px;
     }
-}*/
+}
+    .user-info {
+    display: flex;
+    align-items: center;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.username {
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+}
+*/
 /* _content/ігри/Pages/User_opportunities/Regist.cshtml.rz.scp.css */
 body[b-jt9byo7dqa] {
     font-family: Arial, sans-serif;
